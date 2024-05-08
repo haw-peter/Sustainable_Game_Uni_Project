@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://hhoapvy0ytho"]
+
+[ext_resource type="PackedScene" uid="uid://cb7xsvqghcs34" path="res://interface/counter/Counter.tscn" id="1_35swa"]
+[ext_resource type="Texture2D" uid="uid://bjfsa1saur0xq" path="res://interface/counter/resources/wood/wood.png" id="2_fawuu"]
+
+[node name="WoodCounter" instance=ExtResource("1_35swa")]
+
+[node name="Gold" parent="." index="0"]
+offset_left = -89.0
+offset_right = -9.0
+texture = ExtResource("2_fawuu")
+
+[node name="Label" parent="." index="1"]
+offset_left = -3.0
+offset_top = -33.0
+offset_right = 79.0
+offset_bottom = 35.0

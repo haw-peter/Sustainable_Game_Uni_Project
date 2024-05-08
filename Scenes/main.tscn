@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c3l7itki7dyc5"]
+[gd_scene load_steps=5 format=3 uid="uid://c3l7itki7dyc5"]
 
 [ext_resource type="PackedScene" uid="uid://8perof1x4lj2" path="res://Scenes/tilemap_main.tscn" id="1_l3huc"]
 [ext_resource type="Script" path="res://Scripts/tilemap_main.gd" id="2_nitlo"]
 [ext_resource type="Script" path="res://Scripts/Camera2D.gd" id="3_bcm6o"]
+[ext_resource type="PackedScene" uid="uid://c3oljttxahkr1" path="res://interface/interface.tscn" id="4_jylqt"]
 
 [node name="Main" type="Node"]
 
@@ -10,4 +11,11 @@
 script = ExtResource("2_nitlo")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-1, 0)
 script = ExtResource("3_bcm6o")
+
+[node name="Interface" parent="Camera2D" instance=ExtResource("4_jylqt")]
+offset_left = -575.0
+offset_top = -319.0
+offset_right = -535.0
+offset_bottom = -279.0
