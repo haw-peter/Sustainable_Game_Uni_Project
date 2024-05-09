@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://xymfrv6sswn2"]
+[gd_scene load_steps=5 format=3 uid="uid://xymfrv6sswn2"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_w6a2m"]
 [ext_resource type="Texture2D" uid="uid://cb0cndpfyhjd5" path="res://Green-Hexagon-Polygon-Background-Graphics-4189000-1.jpg" id="2_qrexf"]
+[ext_resource type="PackedScene" uid="uid://cbanw5cwe87gt" path="res://Scenes/day_and_night_shift.tscn" id="3_un1g1"]
 
 [sub_resource type="SystemFont" id="SystemFont_63cge"]
 font_names = PackedStringArray("Impact")
@@ -83,6 +84,8 @@ icon_alignment = 1
 [node name="Exit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "Exit Game"
+
+[node name="day_and_night_shift" parent="." instance=ExtResource("3_un1g1")]
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
