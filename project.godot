@@ -14,6 +14,10 @@ config/name="SustainableGame"
 run/main_scene="res://main_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 
+[autoload]
+
+Events="*res://CardUI/global/events.gd"
+
 [input]
 
 Zoom+={

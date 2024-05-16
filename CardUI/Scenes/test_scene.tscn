@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://jhtkraqldyme"]
+[gd_scene load_steps=7 format=3 uid="uid://jhtkraqldyme"]
 
 [ext_resource type="PackedScene" uid="uid://b3lyijp0w2ux8" path="res://CardUI/Scenes/card_ui.tscn" id="2_lk4bw"]
 [ext_resource type="Script" path="res://CardUI/Scenes/hand.gd" id="2_vs38x"]
+[ext_resource type="Resource" uid="uid://8ib8l8kca47h" path="res://CardUI/Cards/Buildings/factory.tres" id="3_ftnl4"]
+[ext_resource type="Resource" uid="uid://kiedld7n60j7" path="res://CardUI/Cards/Buildings/house.tres" id="4_60e2y"]
+[ext_resource type="Resource" uid="uid://ivsia3nugmyy" path="res://CardUI/Cards/Decks/draw_2.tres" id="5_8bnhs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0b0rn"]
 size = Vector2(1152, 466)
@@ -19,25 +22,29 @@ shape = SubResource("RectangleShape2D_0b0rn")
 [node name="Cards" type="CanvasLayer" parent="." groups=["ui_layer"]]
 
 [node name="Hand" type="HBoxContainer" parent="Cards"]
+custom_minimum_size = Vector2(100, 150)
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -276.0
+offset_left = -300.0
 offset_top = -150.0
-offset_right = 276.0
+offset_right = 300.0
 grow_horizontal = 2
 grow_vertical = 0
-size_flags_vertical = 0
+size_flags_vertical = 4
 alignment = 1
 script = ExtResource("2_vs38x")
 
 [node name="CardUI" parent="Cards/Hand" instance=ExtResource("2_lk4bw")]
 layout_mode = 2
+card = ExtResource("3_ftnl4")
 
 [node name="CardUI2" parent="Cards/Hand" instance=ExtResource("2_lk4bw")]
 layout_mode = 2
+card = ExtResource("4_60e2y")
 
 [node name="CardUI3" parent="Cards/Hand" instance=ExtResource("2_lk4bw")]
 layout_mode = 2
+card = ExtResource("5_8bnhs")

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Card" load_steps=2 format=3 uid="uid://ivsia3nugmyy"]
+
+[ext_resource type="Script" path="res://CardUI/custom ressources/cards.gd" id="1_arjes"]
+
+[resource]
+script = ExtResource("1_arjes")
+id = "draw_2"
+type = 3

@@ -16,9 +16,14 @@ func enter():
 	threshold_timer.timeout.connect(func(): minimum_drag_time_elapsed = true)
 
 func on_input(event: InputEvent):
+	var is_effecting_map := card_ui.card.is_effecting_map()
 	var mouseMotion := event is InputEventMouseMotion
 	var cancel := event.is_action_pressed("rightMouse")
 	var confirm := event.is_action_pressed("leftMouse") or event.is_action_released("leftMouse")
+	
+	if is_effecting_map and mouseMotion and card_ui.targets.size() > 0:
+		transition_requested.emit(self, CardState.State.AIMING)
+		return
 	
 	if mouseMotion:
 		card_ui.global_position = card_ui.get_global_mouse_position() - card_ui.pivot_offset

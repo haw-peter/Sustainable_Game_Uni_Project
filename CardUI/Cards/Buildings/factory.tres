@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Card" load_steps=2 format=3 uid="uid://8ib8l8kca47h"]
+
+[ext_resource type="Script" path="res://CardUI/custom ressources/cards.gd" id="1_mbbus"]
+
+[resource]
+script = ExtResource("1_mbbus")
+id = "factory"
+type = 0

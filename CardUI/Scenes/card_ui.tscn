@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b3lyijp0w2ux8"]
+[gd_scene load_steps=11 format=3 uid="uid://b3lyijp0w2ux8"]
 
 [ext_resource type="Script" path="res://CardUI/Scenes/card_ui.gd" id="1_cvb8o"]
 [ext_resource type="Script" path="res://CardUI/Scenes/card_state_mashine.gd" id="2_64dvn"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://CardUI/CardState/card_clicked_state.gd" id="4_lnito"]
 [ext_resource type="Script" path="res://CardUI/CardState/card_dragging_state.gd" id="5_dovnb"]
 [ext_resource type="Script" path="res://CardUI/CardState/card_released_state.gd" id="6_gjqdj"]
+[ext_resource type="Script" path="res://CardUI/CardState/card_aiming_state.gd" id="7_vlore"]
 
 [sub_resource type="FontVariation" id="FontVariation_xk2wf"]
 
@@ -77,6 +78,10 @@ state = 2
 [node name="CardReleasedState" type="Node" parent="CardStateMashine"]
 script = ExtResource("6_gjqdj")
 state = 4
+
+[node name="CardAimingState" type="Node" parent="CardStateMashine"]
+script = ExtResource("7_vlore")
+state = 3
 
 [connection signal="gui_input" from="." to="." method="on_gui_input"]
 [connection signal="mouse_entered" from="." to="." method="on_mouse_entered"]

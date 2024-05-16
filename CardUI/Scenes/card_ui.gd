@@ -3,13 +3,16 @@ extends Control
 
 signal reparent_requested(card_ui: CardUI)
 
+@export var card: Card
+
 @onready var color: ColorRect = $Color
 @onready var label: Label = $Label
 @onready var card_state_mashine: CardStateMashine = $CardStateMashine as CardStateMashine
 @onready var drop_point_detector = $DropPointDetector
 @onready var targets: Array[Node] = []
 
-
+var parent: Control
+var tween: Tween
 
 func _ready():
 	card_state_mashine.init(self)
@@ -17,8 +20,9 @@ func _ready():
 func _input(event: InputEvent):
 	card_state_mashine.on_input(event)
 
-#func on_input(event: InputEvent):
-	#card_state_mashine.on_input(event)
+func animate_to_position(new_position: Vector2, duration: float):
+	tween = create_tween().set_trans(Tween.TRANS_CIRC).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "global_position", new_position, duration)
 
 func on_gui_input(event: InputEvent):
 	card_state_mashine.on_gui_input(event)
