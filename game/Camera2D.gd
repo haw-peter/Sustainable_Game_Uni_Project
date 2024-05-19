@@ -7,16 +7,16 @@ func _process(delta):
 
 # Block to check if the Mouse is on the edge of the screen, if yes move the camera
 	if get_viewport().get_mouse_position().x <= BorderSize:
-		position.x = lerp(position.x, position.x - CameraSpeed, 0.8)
+		position.x = lerp(position.x, position.x - CameraSpeed, 0.25)
 		
 	if get_viewport().get_mouse_position().x >= get_viewport().get_visible_rect().size.x - BorderSize:
-		position.x = lerp(position.x, position.x + CameraSpeed, 0.8)
+		position.x = lerp(position.x, position.x + CameraSpeed, 0.25)
 		
 	if get_viewport().get_mouse_position().y <= BorderSize:
-		position.y = lerp(position.y, position.y - CameraSpeed, 0.8)
+		position.y = lerp(position.y, position.y - CameraSpeed, 0.25)
 		
 	if get_viewport().get_mouse_position().y >= get_viewport().get_visible_rect().size.y - BorderSize:
-		position.y = lerp(position.y, position.y + CameraSpeed, 0.6)
+		position.y = lerp(position.y, position.y + CameraSpeed, 0.25)
 	
 
 func _input(event):

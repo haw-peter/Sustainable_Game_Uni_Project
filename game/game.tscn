@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://c3l7itki7dyc5"]
+[gd_scene load_steps=7 format=3 uid="uid://c3l7itki7dyc5"]
 
+[ext_resource type="Script" path="res://game/startmessage.gd" id="1_1hsp5"]
 [ext_resource type="PackedScene" uid="uid://8perof1x4lj2" path="res://game/tilemap_main.tscn" id="1_o1rrx"]
 [ext_resource type="Script" path="res://game/tilemap_main.gd" id="2_gog8k"]
 [ext_resource type="Script" path="res://game/Camera2D.gd" id="3_t8fih"]
-[ext_resource type="PackedScene" uid="uid://c3oljttxahkr1" path="res://game/interface/interface.tscn" id="4_hhpeu"]
+[ext_resource type="PackedScene" uid="uid://c3oljttxahkr1" path="res://ui/interface/interface.tscn" id="4_hhpeu"]
 [ext_resource type="PackedScene" uid="uid://cbanw5cwe87gt" path="res://game/day_and_night_shift.tscn" id="5_0eutx"]
 
 [node name="Main" type="Node"]
@@ -14,6 +15,13 @@ script = ExtResource("2_gog8k")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-1, 0)
 script = ExtResource("3_t8fih")
+
+[node name="WelcomeMessage" type="Control" parent="Camera2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_1hsp5")
 
 [node name="Interface" parent="Camera2D" instance=ExtResource("4_hhpeu")]
 offset_left = -575.0
