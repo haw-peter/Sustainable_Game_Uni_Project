@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://c3l7itki7dyc5"]
 
-[ext_resource type="PackedScene" uid="uid://8perof1x4lj2" path="res://Scenes/tilemap_main.tscn" id="1_l3huc"]
-[ext_resource type="PackedScene" uid="uid://cbanw5cwe87gt" path="res://Scenes/day_and_night_shift.tscn" id="1_mcux2"]
-[ext_resource type="Script" path="res://Scripts/tilemap_main.gd" id="2_nitlo"]
-[ext_resource type="Script" path="res://Scripts/Camera2D.gd" id="3_bcm6o"]
+[ext_resource type="PackedScene" uid="uid://8perof1x4lj2" path="res://scenes/tilemap_main.tscn" id="1_l3huc"]
+[ext_resource type="PackedScene" uid="uid://cbanw5cwe87gt" path="res://scenes/day_and_night_shift.tscn" id="1_mcux2"]
+[ext_resource type="Script" path="res://scripts/tilemap_main.gd" id="2_nitlo"]
+[ext_resource type="Script" path="res://scripts/Camera2D.gd" id="3_bcm6o"]
 [ext_resource type="PackedScene" uid="uid://c3oljttxahkr1" path="res://interface/interface.tscn" id="4_jylqt"]
 
 [node name="Main" type="Node"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cbanw5cwe87gt"]
 
-[ext_resource type="Script" path="res://Scenes/day_and_night_shift.gd" id="1_k4w7g"]
+[ext_resource type="Script" path="res://scenes/day_and_night_shift.gd" id="1_k4w7g"]
 
 [sub_resource type="Animation" id="Animation_1yj7k"]
 length = 0.001

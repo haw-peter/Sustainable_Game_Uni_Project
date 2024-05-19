@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://8perof1x4lj2"]
 
-[ext_resource type="Texture2D" uid="uid://ddx8kdyyqrxjs" path="res://HexTiles(Kenney)/Spritesheets/hexagonTerrain_sheet.png" id="1_ldbeh"]
-[ext_resource type="Texture2D" uid="uid://dbrdc0w0aaevu" path="res://HexTiles(Kenney)/Spritesheets/hexagonBuildings_sheet.png" id="2_40mn0"]
+[ext_resource type="Texture2D" uid="uid://ddx8kdyyqrxjs" path="res://hexTiles/Spritesheets/hexagonTerrain_sheet.png" id="1_ldbeh"]
+[ext_resource type="Texture2D" uid="uid://dbrdc0w0aaevu" path="res://hexTiles/Spritesheets/hexagonBuildings_sheet.png" id="2_40mn0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m7ahw"]
 texture = ExtResource("1_ldbeh")
