@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://b751oeedmabhk"]
+
+[ext_resource type="PackedScene" uid="uid://cb7xsvqghcs34" path="res://game/interface/counter/Counter.tscn" id="1_yq434"]
+
+[node name="GoldCounter" instance=ExtResource("1_yq434")]
+
+[node name="Gold" parent="." index="0"]
+offset_left = -91.0
+offset_top = -41.0
+offset_right = -11.0
+offset_bottom = 39.0
+
+[node name="Label" parent="." index="1"]
+offset_left = -3.0
+offset_top = -33.0
+offset_right = 79.0
+offset_bottom = 35.0
