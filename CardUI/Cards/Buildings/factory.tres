@@ -6,3 +6,4 @@
 script = ExtResource("1_mbbus")
 id = "factory"
 type = 0
+tile_id = 7

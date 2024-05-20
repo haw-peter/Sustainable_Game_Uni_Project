@@ -6,3 +6,4 @@
 script = ExtResource("1_hjoxr")
 id = "house"
 type = 0
+tile_id = 5

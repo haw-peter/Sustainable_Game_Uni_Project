@@ -6,6 +6,7 @@ var last_indicator = Vector2i(0,0)
 var tile_dic = get_all_tile_coords($TileMap.get_tileset().get_source(1))
 
 var selected_item = 1
+var selected_tile: int
 @onready var tilemap = $TileMap
 
 var aiming = false
@@ -51,7 +52,8 @@ func _process(delta):
 	#print("Selected Index", selected_item)\
 	if aiming:
 		$TileMap.clear_layer(2)
-		$TileMap.set_cell(2, $TileMap.local_to_map(get_global_mouse_position()), 1, tile_dic[selected_item],0) # 
+		#$TileMap.set_cell(2, $TileMap.local_to_map(get_global_mouse_position()), 1, tile_dic[selected_item],0)
+		$TileMap.set_cell(2, $TileMap.local_to_map(get_global_mouse_position()), selected_tile, Vector2i.ZERO, 0) 
 
 static func get_all_tile_coords(tile_source: TileSetSource) -> Array[Vector2i]:	
 	var coords: Array[Vector2i] = []
@@ -61,8 +63,9 @@ static func get_all_tile_coords(tile_source: TileSetSource) -> Array[Vector2i]:
 
 	return coords
 
-func show_cursor():
+func show_cursor(tile: int):
 	aiming = true
+	selected_tile = tile
 	tilemap.set_layer_enabled(2, true)
 
 func hide_cursor():
@@ -70,5 +73,6 @@ func hide_cursor():
 	tilemap.set_layer_enabled(2, !true)
 
 func place_tile():
-	$TileMap.set_cell(1, $TileMap.local_to_map(get_global_mouse_position()), 1, tile_dic[selected_item],0)
+	$TileMap.set_cell(1, $TileMap.local_to_map(get_global_mouse_position()), selected_tile, Vector2i.ZERO, 0)
+
 

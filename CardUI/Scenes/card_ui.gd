@@ -7,6 +7,8 @@ signal reparent_requested(card_ui: CardUI)
 
 @onready var color: ColorRect = $Color
 @onready var label: Label = $Label
+@onready var type: Label = $Type
+@onready var id: Label = $Id
 @onready var card_state_mashine: CardStateMashine = $CardStateMashine as CardStateMashine
 @onready var drop_point_detector = $DropPointDetector
 @onready var targets: Array[Node] = []

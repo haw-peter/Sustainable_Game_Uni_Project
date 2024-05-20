@@ -14,6 +14,8 @@ func enter():
 
 func on_input(event: InputEvent):
 	if played:
+		Events.delete_card.emit(self.card_ui)
 		return
 	
-	transition_requested.emit(self, CardState.State.BASE)
+	Events.delete_card.emit(self.card_ui)
+	#transition_requested.emit(self, CardState.State.BASE)

@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://jhtkraqldyme"]
+[gd_scene load_steps=8 format=3 uid="uid://jhtkraqldyme"]
 
+[ext_resource type="Script" path="res://CardUI/Scenes/player_handler.gd" id="1_sokf2"]
 [ext_resource type="PackedScene" uid="uid://b3lyijp0w2ux8" path="res://CardUI/Scenes/card_ui.tscn" id="2_lk4bw"]
 [ext_resource type="Script" path="res://CardUI/Scenes/hand.gd" id="2_vs38x"]
 [ext_resource type="Resource" uid="uid://8ib8l8kca47h" path="res://CardUI/Cards/Buildings/factory.tres" id="3_ftnl4"]
@@ -18,6 +19,10 @@ collision_layer = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CardDropArea"]
 position = Vector2(577, 234)
 shape = SubResource("RectangleShape2D_0b0rn")
+
+[node name="PlayerHandler" type="Node" parent="." node_paths=PackedStringArray("hand")]
+script = ExtResource("1_sokf2")
+hand = NodePath("../Cards/Hand")
 
 [node name="Cards" type="CanvasLayer" parent="." groups=["ui_layer"]]
 
