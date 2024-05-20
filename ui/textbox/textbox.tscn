@@ -5,6 +5,11 @@
 [ext_resource type="FontFile" uid="uid://nn7yal2irqx0" path="res://fonts/pixelfont.ttf" id="3_lrq3w"]
 
 [node name="TextBox" type="MarginContainer"]
+anchors_preset = -1
+anchor_right = 0.121
+anchor_bottom = 0.049
+offset_right = -107.392
+offset_bottom = 0.247999
 script = ExtResource("1_4j7k1")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]

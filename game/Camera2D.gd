@@ -3,6 +3,9 @@ extends Camera2D
 var BorderSize = 30 # Variable to set the Bordersize for camera
 var CameraSpeed = 30 # Variable to adjust the camera movespeed
 
+func _ready():
+	NotificationManager.set_notification_parent(self)
+	
 func _process(delta):
 
 # Block to check if the Mouse is on the edge of the screen, if yes move the camera

@@ -8,15 +8,15 @@ const MAX_WIDTH = 256
 var text = ""
 var letter_index = 0
 
-var letter_time = 0.03
-var space_time = 0.06
+var letter_time = 0.05
+var space_time = 0.1
 var punctuation_time = 0.2
 
 signal finished_displaying()
 
 func display_text(text_to_display: String):
 	text = text_to_display
-	label.text = text_to_display
+	label.text = text
 	
 	await resized
 	custom_minimum_size.x = min(size.x, MAX_WIDTH)
@@ -27,8 +27,8 @@ func display_text(text_to_display: String):
 		await resized # wait for y resize
 		custom_minimum_size.y = size.y
 		
-	global_position.x -= size.x /2
-	global_position.y -= size.y +24
+	global_position.x = 1
+	global_position.y = 200
 	
 	label.text = ""
 	_display_letter()

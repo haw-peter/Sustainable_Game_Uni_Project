@@ -1,6 +1,5 @@
 extends Node
 
-
 @onready var text_box_scene = preload ("res://ui/textbox/textbox.tscn")
 
 var notification_line: String = ""
@@ -15,6 +14,12 @@ var text_box_position: Vector2
 
 var is_dialog_active = false
 var can_advance_line = false
+
+func _ready():
+	if NotificationManager.notification_parent != null:
+		_show_notification_box()
+	else:
+		NotificationManager.connect("notification_parent_set", Callable(self, "_show_notification_box"))
 
 func start_notification(line: String):
 	notification_line = line
@@ -34,11 +39,12 @@ func start_dialog(position: Vector2, lines: Array[String]):
 	is_dialog_active = true
 
 func _show_notification_box():
-	notification_box = text_box_scene.instantiate()
-	notification_box.finished_displaying.connect(_on_notification_box_finished_displaying)
-	get_tree().root.add_child(notification_box)
-	notification_box.display_text(notification_line)
-	
+	if NotificationManager.notification_parent != null:
+		notification_box = text_box_scene.instantiate()
+		notification_box.finished_displaying.connect(_on_notification_box_finished_displaying)
+		NotificationManager.notification_parent.add_child(notification_box)
+		notification_box.display_text(notification_line)
+
 
 func _show_text_box():
 	text_box = text_box_scene.instantiate()
@@ -72,4 +78,5 @@ func _unhaldled_input(event):
 
 
 func _on_timer_timeout():
-		notification_box.queue_free()
+	$Timer.stop()
+	notification_box.queue_free()

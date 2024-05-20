@@ -13,21 +13,23 @@
 script = ExtResource("2_gog8k")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-1, 0)
+position = Vector2(576, 324)
 script = ExtResource("3_t8fih")
-
-[node name="WelcomeMessage" type="Control" parent="Camera2D"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("1_1hsp5")
 
 [node name="Interface" parent="Camera2D" instance=ExtResource("4_hhpeu")]
 offset_left = -575.0
 offset_top = -319.0
 offset_right = -535.0
 offset_bottom = -279.0
+metadata/_edit_use_anchors_ = true
+
+[node name="WelcomeMessage" type="Control" parent="Camera2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1.0
+offset_right = 33.0
+offset_bottom = 32.0
+script = ExtResource("1_1hsp5")
+metadata/_edit_use_anchors_ = true
 
 [node name="day_and_night_shift" parent="." instance=ExtResource("5_0eutx")]
-position = Vector2(-577, -324)
