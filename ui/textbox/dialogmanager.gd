@@ -72,4 +72,4 @@ func _unhaldled_input(event):
 
 
 func _on_timer_timeout():
-		get_tree().root.remove_child(notification_box)
+		notification_box.queue_free()
