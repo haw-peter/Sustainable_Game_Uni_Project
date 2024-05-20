@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckx8ya0gymerm"]
+
+[ext_resource type="Texture2D" uid="uid://gnivmnpcamfu" path="res://ui/interface/bar/life_bar/bar_empty.png" id="1_g6plm"]
+[ext_resource type="Texture2D" uid="uid://j4472hii5fi8" path="res://ui/interface/bar/life_bar/bar_fill.png" id="2_gc3oh"]
+
+[node name="Bar" type="HBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 2
+value = 30.0
+texture_under = ExtResource("1_g6plm")
+texture_progress = ExtResource("2_gc3oh")

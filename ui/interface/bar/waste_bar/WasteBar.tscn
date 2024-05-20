@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://bimu3msj5gyif"]
+
+[ext_resource type="PackedScene" uid="uid://xpnpoqx3boq1" path="res://ui/interface/bar/life_bar/HealthBar.tscn" id="1_sohw2"]
+[ext_resource type="Texture2D" uid="uid://btpn77wnk5mar" path="res://ui/interface/bar/waste_bar/waste.png" id="2_ogiax"]
+[ext_resource type="Texture2D" uid="uid://crvmjhn3uu203" path="res://ui/interface/bar/waste_bar/waste-bar-empty.png" id="3_lbro3"]
+[ext_resource type="Texture2D" uid="uid://ddr3k1yi66x47" path="res://ui/interface/bar/waste_bar/waste-bar-fill.png" id="4_yp35m"]
+
+[node name="Bar" instance=ExtResource("1_sohw2")]
+offset_top = 20.0
+offset_bottom = 59.0
+
+[node name="Gold" parent="." index="0"]
+offset_top = -42.0
+offset_bottom = 54.0
+texture = ExtResource("2_ogiax")
+
+[node name="Label" parent="." index="1"]
+text = "10%"
+
+[node name="HealthBar" parent="." index="2"]
+offset_top = -3.0
+offset_right = 419.0
+offset_bottom = 46.0
+value = 10.0
+texture_under = ExtResource("3_lbro3")
+texture_progress = ExtResource("4_yp35m")
