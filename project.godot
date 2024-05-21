@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 DialogManager="*res://ui/textbox/dialogmanager.tscn"
 NotificationManager="*res://ui/textbox/notificationmanager.gd"
 
+[dotnet]
+
+project/assembly_name="SustainableGame"
+
 [input]
 
 Zoom+={

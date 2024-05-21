@@ -58,3 +58,7 @@ static func get_all_tile_coords(tile_source: TileSetSource) -> Array[Vector2i]:
 		coords.append(tile_source.get_tile_id(i))
 
 	return coords
+
+
+func _on_background_music_ready():
+	pass # Replace with function body.
