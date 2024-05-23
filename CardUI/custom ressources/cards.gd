@@ -13,3 +13,12 @@ func is_effecting_map() -> bool:
 
 func card_type() -> String:
 	return Type.keys()[type]
+
+func play(player_stats: PlayerStats):
+	Events.card_played.emit(self)
+	# here change the player stats
+	apply_effects()
+
+# abstract function for the specific cards
+func apply_effects():
+	pass

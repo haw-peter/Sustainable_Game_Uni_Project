@@ -17,9 +17,6 @@ config/features=PackedStringArray("4.2", "Forward Plus")
 [autoload]
 
 Events="*res://CardUI/global/events.gd"
-
-[autoload]
-
 DialogManager="*res://ui/textbox/dialogmanager.tscn"
 
 [input]

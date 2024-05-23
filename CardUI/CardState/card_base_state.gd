@@ -12,8 +12,7 @@ func enter():
 	card_ui.color.color = Color.WEB_GREEN
 	card_ui.label.text = "Base"
 	card_ui.pivot_offset = Vector2.ZERO
-	card_ui.type.text = card_ui.card.card_type()
-	card_ui.id.text = card_ui.card.id
+
 
 func on_gui_input(event: InputEvent):
 	if event.is_action_pressed("leftMouse"):

@@ -1,6 +1,6 @@
 extends CardState
 
-const DRAG_MINIMUM_THRESHOLD := 0.05
+const DRAG_MINIMUM_THRESHOLD := 0.1
 var minimum_drag_time_elapsed := false
 
 func enter():
@@ -20,6 +20,7 @@ func on_input(event: InputEvent):
 	var mouseMotion := event is InputEventMouseMotion
 	var cancel := event.is_action_pressed("rightMouse")
 	var confirm := event.is_action_pressed("leftMouse") or event.is_action_released("leftMouse")
+	var inside_play_area := not card_ui.targets.is_empty()
 	
 	if is_effecting_map and mouseMotion and card_ui.targets.size() > 0:
 		transition_requested.emit(self, CardState.State.AIMING)
@@ -30,7 +31,7 @@ func on_input(event: InputEvent):
 	
 	if cancel:
 		transition_requested.emit(self, CardState.State.BASE)
-	elif minimum_drag_time_elapsed and confirm:
+	elif minimum_drag_time_elapsed and confirm and inside_play_area:
 		get_viewport().set_input_as_handled()
 		transition_requested.emit(self, CardState.State.RELEASED)
 
