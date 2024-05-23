@@ -1,17 +1,6 @@
 extends Control
 
-<<<<<<< Updated upstream
-signal health_changed(health)
-signal gold_changed(count)
 
-
-
-func _on_Health_health_changed(health):
-	emit_signal("health_changed", health)
-	
-func _on_Purse_gold_changed(count):
-	emit_signal("gold_changed", count)
-=======
 signal health_updated(value)
 signal gold_updated(count)
 signal wood_updated(count)
@@ -118,6 +107,4 @@ func _on_Interface_health_updated(new_health):
 func _on_Interface_waste_updated(new_waste):
 	animate_waste(current_waste, new_waste)
 	_update_health_bar(new_waste)
-	current_waste = new_waste	
-			
->>>>>>> Stashed changes
+	current_waste = new_waste
