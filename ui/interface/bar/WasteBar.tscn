@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://baubngqf1bca5"]
+
+[ext_resource type="PackedScene" uid="uid://bdgu0cicu0erv" path="res://interface/bar/LifeBar.tscn" id="1_xj0wr"]
+[ext_resource type="Texture2D" uid="uid://cq6ra6mwp6obj" path="res://interface/bar/waste.png" id="2_1lfiv"]
+[ext_resource type="Texture2D" uid="uid://lbiepllkknlb" path="res://interface/bar/waste-bar-empty.png" id="3_p55f5"]
+[ext_resource type="Texture2D" uid="uid://bqbyy1qd1vtnj" path="res://interface/bar/waste-bar-fill.png" id="4_4hwqq"]
+
+[node name="WasteBar" instance=ExtResource("1_xj0wr")]
+offset_top = 56.0
+offset_bottom = 103.704
+
+[node name="Count" parent="." index="0"]
+texture = null
+
+[node name="Title" parent="Count" index="0"]
+offset_left = 255.0
+offset_top = -26.5
+offset_right = 335.0
+offset_bottom = 53.5
+texture = ExtResource("2_1lfiv")
+
+[node name="Number" parent="Count" index="1"]
+modulate = Color(0.960938, 0.229355, 0.033783, 1)
+offset_left = 232.0
+offset_top = 19.5
+offset_right = 247.0
+offset_bottom = 38.5
+text = "0"
+
+[node name="TextureProgress" parent="." index="1"]
+value = 0.0
+texture_under = ExtResource("3_p55f5")
+texture_progress = ExtResource("4_4hwqq")

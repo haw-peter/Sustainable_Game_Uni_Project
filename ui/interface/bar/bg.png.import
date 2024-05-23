@@ -1,0 +1,44 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+<<<<<<<< Updated upstream:game/hexTiles/PNG/Objects/archway.png.import
+uid="uid://cx2s1kmjyhkpd"
+path="res://.godot/imported/archway.png-45488b83c450685a0738fac0102ba198.ctex"
+========
+uid="uid://bm2gxyqldl0pe"
+path="res://.godot/imported/bg.png-19a9e03a98ec59d69dc574a7b45d2516.ctex"
+>>>>>>>> Stashed changes:ui/interface/bar/bg.png.import
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+<<<<<<<< Updated upstream:game/hexTiles/PNG/Objects/archway.png.import
+source_file="res://game/hexTiles/PNG/Objects/archway.png"
+dest_files=["res://.godot/imported/archway.png-45488b83c450685a0738fac0102ba198.ctex"]
+========
+source_file="res://ui/interface/bar/bg.png"
+dest_files=["res://.godot/imported/bg.png-19a9e03a98ec59d69dc574a7b45d2516.ctex"]
+>>>>>>>> Stashed changes:ui/interface/bar/bg.png.import
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

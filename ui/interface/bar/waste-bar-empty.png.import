@@ -2,20 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< Updated upstream
-uid="uid://cnmdnwsrbc3o1"
-=======
-uid="uid://infnowiu0ldp"
->>>>>>> Stashed changes
-path="res://.godot/imported/label_bg.png-5eb93a0b00a9ba789526699ecd7a3754.ctex"
+uid="uid://cl1d4lrgy2v3s"
+path="res://.godot/imported/waste-bar-empty.png-08a40e43c8a1847153d7852053380aa6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/interface/counter/label_bg.png"
-dest_files=["res://.godot/imported/label_bg.png-5eb93a0b00a9ba789526699ecd7a3754.ctex"]
+source_file="res://ui/interface/bar/waste-bar-empty.png"
+dest_files=["res://.godot/imported/waste-bar-empty.png-08a40e43c8a1847153d7852053380aa6.ctex"]
 
 [params]
 

@@ -2,7 +2,6 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< Updated upstream
 <<<<<<<< Updated upstream:ui/interface/bar/life_bar/heart.png.import
 uid="uid://dpt1amxf55yyd"
 path="res://.godot/imported/heart.png-71c018a7543983d560d2e8ce0f021be5.ctex"
@@ -10,17 +9,12 @@ path="res://.godot/imported/heart.png-71c018a7543983d560d2e8ce0f021be5.ctex"
 uid="uid://c7c7ay8fo6pbs"
 path="res://.godot/imported/heart.png-cae0372eb50f57dfaa57a48137ea1c81.ctex"
 >>>>>>>> Stashed changes:ui/interface/bar/heart.png.import
-=======
-uid="uid://7ivf7wtsxs4e"
-path="res://.godot/imported/heart.png-71c018a7543983d560d2e8ce0f021be5.ctex"
->>>>>>> Stashed changes
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<< Updated upstream
 <<<<<<<< Updated upstream:ui/interface/bar/life_bar/heart.png.import
 source_file="res://ui/interface/bar/life_bar/heart.png"
 dest_files=["res://.godot/imported/heart.png-71c018a7543983d560d2e8ce0f021be5.ctex"]
@@ -28,10 +22,6 @@ dest_files=["res://.godot/imported/heart.png-71c018a7543983d560d2e8ce0f021be5.ct
 source_file="res://ui/interface/bar/heart.png"
 dest_files=["res://.godot/imported/heart.png-cae0372eb50f57dfaa57a48137ea1c81.ctex"]
 >>>>>>>> Stashed changes:ui/interface/bar/heart.png.import
-=======
-source_file="res://ui/interface/bar/life_bar/heart.png"
-dest_files=["res://.godot/imported/heart.png-71c018a7543983d560d2e8ce0f021be5.ctex"]
->>>>>>> Stashed changes
 
 [params]
 
