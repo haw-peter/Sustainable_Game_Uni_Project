@@ -1,12 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://bdgu0cicu0erv"]
+[gd_scene load_steps=9 format=3 uid="uid://bdgu0cicu0erv"]
 
-[ext_resource type="Script" path="res://interface/bar/bar.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://dy3r7xycsl3y3" path="res://interface/counter/label_bg.png" id="2"]
-[ext_resource type="Texture2D" uid="uid://bqd31fjcqr2yr" path="res://interface/bar/heart.png" id="3_mt843"]
-[ext_resource type="Theme" uid="uid://cldqliqp1ixxy" path="res://interface/theme/default_theme.tres" id="4"]
-[ext_resource type="Texture2D" uid="uid://gqn4dciqk8ho" path="res://interface/bar/bg.png" id="5"]
-[ext_resource type="Texture2D" uid="uid://dccsk5ffe6mpg" path="res://interface/bar/fill.png" id="6"]
-[ext_resource type="Script" path="res://interface/bar/texture_progress.gd" id="7"]
+[ext_resource type="Script" path="res://ui/interface/bar/bar.gd" id="1_qrhll"]
+[ext_resource type="Script" path="res://ui/interface/bar/texture_progress.gd" id="2_04in3"]
+[ext_resource type="Texture2D" uid="uid://chv4uio6qtgbt" path="res://ui/interface/bar/heart.png" id="2_25ta0"]
+[ext_resource type="Texture2D" uid="uid://beglwxurlxpub" path="res://ui/interface/bar/bg.png" id="3_6yor1"]
+[ext_resource type="Texture2D" uid="uid://dsiyij2u5x7px" path="res://ui/interface/bar/fill.png" id="4_vrjv1"]
 
 [sub_resource type="Animation" id="2"]
 resource_name = "SETUP"
@@ -88,11 +86,10 @@ anchor_bottom = 0.002
 offset_top = 1.0
 offset_right = 471.0
 offset_bottom = 52.704
-script = ExtResource("1")
+script = ExtResource("1_qrhll")
 
 [node name="Count" type="NinePatchRect" parent="."]
 layout_mode = 2
-texture = ExtResource("2")
 
 [node name="Title" type="TextureRect" parent="Count"]
 layout_mode = 1
@@ -104,7 +101,7 @@ offset_top = -30.5
 offset_right = 481.0
 offset_bottom = 35.5
 grow_vertical = 2
-texture = ExtResource("3_mt843")
+texture = ExtResource("2_25ta0")
 stretch_mode = 4
 
 [node name="Number" type="Label" parent="Count"]
@@ -120,14 +117,13 @@ offset_right = 423.0
 offset_bottom = 49.5
 grow_horizontal = 0
 grow_vertical = 2
-theme = ExtResource("4")
 text = "0"
 
 [node name="TextureProgress" type="TextureProgressBar" parent="."]
 layout_mode = 2
-texture_under = ExtResource("5")
-texture_progress = ExtResource("6")
-script = ExtResource("7")
+texture_under = ExtResource("3_6yor1")
+texture_progress = ExtResource("4_vrjv1")
+script = ExtResource("2_04in3")
 
 [node name="Tween" type="Tween" parent="."]
 _import_path = NodePath("")
@@ -150,5 +146,3 @@ libraries = {
 "": SubResource("AnimationLibrary_vq42b")
 }
 autoplay = "SETUP"
-
-[connection signal="maximum_changed" from="." to="TextureProgress" method="_on_Bar_maximum_changed"]

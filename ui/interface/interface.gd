@@ -9,6 +9,8 @@ signal waste_bar_changed(value)
 signal waste_bar_animation(value)
 signal health_bar_animation(value)
 
+@onready var tilemap_main = $"../../Tilemap Main"
+
 var gold_count: int = 100
 var wood_count: int = 10  # Starting wood count
 var house_count: int = 0
@@ -34,7 +36,7 @@ func _ready():
 	interface_node.connect("health_bar_animation", Callable(self, "_on_Interface_health_updated"))
 
 func _connect_tilemap_signal():
-	var tile_map_node = get_node("/root/Main/Tilemap Main")
+	var tile_map_node = tilemap_main #get_node("/root/Main/Tilemap Main")
 	if tile_map_node:
 		tile_map_node.connect("tile_placed", Callable(self, "_on_tile_placed"))
 	else:

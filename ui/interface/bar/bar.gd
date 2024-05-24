@@ -7,7 +7,7 @@ var current_waste = 0
 	
 func _ready():
 	# Connect to signals from the Interface node
-	var interface_node = get_node("Camera2D/Interface")
+	var interface_node = get_parent().get_parent() #get_node("res://game/Camera2D.gd")
 	if interface_node:
 		interface_node.connect("health_bar_changed", Callable(self, "_update_health_label"))
 		interface_node.connect("waste_bar_changed", Callable(self, "_update_waste_label"))
@@ -18,12 +18,12 @@ func _ready():
 
 
 func _update_health_label(health_count):
-	$Bars/LifeBar/Number.text = str(health_count)
-	$Bars/LifeBar/TextureProgress.value = health_count
+	$Count/Number.text = str(health_count)
+	$TextureProgress.value = health_count
 
 func _update_waste_label(waste_count):
-	$Bars/WasteBar/Number.text = str(waste_count)
-	$Bars/WasteBar/TextureProgress.value = waste_count
+	$Count/Number.text = str(waste_count)
+	$TextureProgress.value = waste_count
 	
 	
 func animate_health(start, end):

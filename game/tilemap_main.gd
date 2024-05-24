@@ -1,5 +1,7 @@
 extends Node2D
 
+signal tile_placed(amount)
+
 var StartSize = 20
 var Dic = {}
 var LastIndicator = Vector2i(0,0)
@@ -40,6 +42,7 @@ func _input(event):
 	
 	if event.is_action_pressed("Place"):
 		$TileMap.set_cell(1, $TileMap.local_to_map(get_global_mouse_position()), 1, TileDic[SelectedItem],0)
+		emit_signal("tile_placed", 1)
 	if event.is_action_pressed("Remove"):
 		$TileMap.erase_cell(1, $TileMap.local_to_map(get_global_mouse_position()))
 

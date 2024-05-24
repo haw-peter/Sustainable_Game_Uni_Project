@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bd75qmavfnqn0"]
 
-[ext_resource type="PackedScene" uid="uid://dscw4mglk6dx6" path="res://interface/counter/Counter.tscn" id="1_f14hv"]
-[ext_resource type="Texture2D" uid="uid://b2mwdkb4wp4px" path="res://interface/counter/haus.png" id="2_plp3c"]
+[ext_resource type="PackedScene" uid="uid://dscw4mglk6dx6" path="res://ui/interface/counter/Counter.tscn" id="1_f14hv"]
+[ext_resource type="Texture2D" uid="uid://b2mwdkb4wp4px" path="res://ui/interface/counter/haus.png" id="2_plp3c"]
 
 [node name="House" instance=ExtResource("1_f14hv")]
 

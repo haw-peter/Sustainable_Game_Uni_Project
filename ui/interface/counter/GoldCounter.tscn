@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cl7gsipfesj1p"]
 
-[ext_resource type="PackedScene" uid="uid://dscw4mglk6dx6" path="res://interface/counter/Counter.tscn" id="1_46s86"]
-[ext_resource type="Texture2D" uid="uid://c3cm1qnoch75i" path="res://interface/counter/goldbar.png" id="2_2d3fu"]
+[ext_resource type="PackedScene" uid="uid://dscw4mglk6dx6" path="res://ui/interface/counter/Counter.tscn" id="1_46s86"]
+[ext_resource type="Texture2D" uid="uid://c3cm1qnoch75i" path="res://ui/interface/counter/goldbar.png" id="2_2d3fu"]
 
 [node name="GoldCounter" instance=ExtResource("1_46s86")]
 

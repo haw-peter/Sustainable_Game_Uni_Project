@@ -1,13 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dscw4mglk6dx6"]
+[gd_scene load_steps=2 format=3 uid="uid://dscw4mglk6dx6"]
 
-[ext_resource type="Texture2D" uid="uid://dy3r7xycsl3y3" path="res://interface/counter/label_bg.png" id="1"]
-[ext_resource type="Script" path="res://interface/counter/counter.gd" id="2"]
-[ext_resource type="Theme" uid="uid://cldqliqp1ixxy" path="res://interface/theme/default_theme.tres" id="3"]
-[ext_resource type="Texture2D" uid="uid://d2q7do55erroq" path="res://interface/counter/wood.png" id="4_r0wt8"]
+[ext_resource type="Texture2D" uid="uid://d2q7do55erroq" path="res://ui/interface/counter/wood.png" id="4_r0wt8"]
 
 [node name="Counter" type="NinePatchRect"]
-texture = ExtResource("1")
-script = ExtResource("2")
 
 [node name="Number" type="Label" parent="."]
 layout_mode = 1
@@ -17,7 +12,6 @@ anchor_bottom = 0.5
 offset_right = 16.0
 offset_bottom = 80.0
 grow_vertical = 2
-theme = ExtResource("3")
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1

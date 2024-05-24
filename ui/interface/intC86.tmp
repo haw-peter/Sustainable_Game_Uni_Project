@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bmxafsj7i4ru2"]
+[gd_scene load_steps=9 format=3 uid="uid://bmxafsj7i4ru2"]
 
 [ext_resource type="Script" path="res://ui/interface/interface.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://bdgu0cicu0erv" path="res://ui/interface/bar/LifeBar.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://dscw4mglk6dx6" path="res://ui/interface/counter/Counter.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://baubngqf1bca5" path="res://ui/interface/bar/WasteBar.tscn" id="3_7wna4"]
+[ext_resource type="Script" path="res://ui/interface/counter/counter.gd" id="5_1san0"]
 [ext_resource type="PackedScene" uid="uid://cl7gsipfesj1p" path="res://ui/interface/counter/GoldCounter.tscn" id="5_v6bx1"]
 [ext_resource type="PackedScene" uid="uid://bd75qmavfnqn0" path="res://ui/interface/counter/house.tscn" id="6_jq5eq"]
 [ext_resource type="Script" path="res://ui/interface/counter/Panel.gd" id="6_ydea5"]
@@ -23,11 +24,9 @@ size_flags_horizontal = 3
 
 [node name="LifeBar" parent="Bars" instance=ExtResource("2")]
 layout_mode = 2
-script = null
 
 [node name="WasteBar" parent="Bars" instance=ExtResource("3_7wna4")]
 layout_mode = 2
-script = null
 
 [node name="Counters" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -41,12 +40,15 @@ size_flags_vertical = 4
 
 [node name="WoodCounter" parent="Counters" instance=ExtResource("3")]
 layout_mode = 2
+script = ExtResource("5_1san0")
 
 [node name="GoldCounter" parent="Counters" instance=ExtResource("5_v6bx1")]
 layout_mode = 2
+script = ExtResource("5_1san0")
 
 [node name="HouseCounter" parent="Counters" instance=ExtResource("6_jq5eq")]
 layout_mode = 2
+script = ExtResource("5_1san0")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
