@@ -20,14 +20,11 @@ offset_bottom = 53.5
 texture = ExtResource("2_1lfiv")
 
 [node name="Number" parent="Count" index="1"]
-modulate = Color(0.960938, 0.229355, 0.033783, 1)
 offset_left = 232.0
 offset_top = 19.5
 offset_right = 247.0
 offset_bottom = 38.5
-text = "0"
 
 [node name="TextureProgress" parent="." index="1"]
-value = 0.0
 texture_under = ExtResource("3_p55f5")
 texture_progress = ExtResource("4_4hwqq")

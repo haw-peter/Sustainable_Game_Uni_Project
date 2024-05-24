@@ -1,6 +1,5 @@
 extends Control
 
-
 signal health_updated(value)
 signal gold_updated(count)
 signal wood_updated(count)
@@ -107,4 +106,5 @@ func _on_Interface_health_updated(new_health):
 func _on_Interface_waste_updated(new_waste):
 	animate_waste(current_waste, new_waste)
 	_update_health_bar(new_waste)
-	current_waste = new_waste
+	current_waste = new_waste	
+			

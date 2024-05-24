@@ -1,33 +1,9 @@
-<<<<<<< Updated upstream
-[gd_scene load_steps=4 format=3 uid="uid://cb7xsvqghcs34"]
-
-[ext_resource type="Texture2D" uid="uid://cnmdnwsrbc3o1" path="res://ui/interface/counter/label_bg.png" id="1_sbvax"]
-[ext_resource type="Texture2D" uid="uid://b1nhfe7erarpg" path="res://ui/interface/counter/resources/gold/goldbar.png" id="2_20sao"]
-[ext_resource type="Theme" uid="uid://dqlhxe68y45r2" path="res://ui/interface/theme/font/default_font.tres" id="3_d6dio"]
-
-[node name="Counter" type="NinePatchRect"]
-offset_right = 167.0
-offset_bottom = 70.0
-texture = ExtResource("1_sbvax")
-patch_margin_left = 8
-patch_margin_top = 8
-patch_margin_right = 8
-patch_margin_bottom = 8
-
-[node name="Gold" type="TextureRect" parent="."]
-=======
 [gd_scene load_steps=5 format=3 uid="uid://dscw4mglk6dx6"]
 
-<<<<<<< HEAD:interface/counter/Counter.tscn
 [ext_resource type="Texture2D" uid="uid://dy3r7xycsl3y3" path="res://interface/counter/label_bg.png" id="1"]
 [ext_resource type="Script" path="res://interface/counter/counter.gd" id="2"]
 [ext_resource type="Theme" uid="uid://cldqliqp1ixxy" path="res://interface/theme/default_theme.tres" id="3"]
 [ext_resource type="Texture2D" uid="uid://d2q7do55erroq" path="res://interface/counter/wood.png" id="4_r0wt8"]
-=======
-[ext_resource type="Texture2D" uid="uid://cnmdnwsrbc3o1" path="res://ui/interface/counter/label_bg.png" id="1_sbvax"]
-[ext_resource type="Texture2D" uid="uid://b1nhfe7erarpg" path="res://ui/interface/counter/resources/gold/goldbar.png" id="2_20sao"]
-[ext_resource type="Theme" uid="uid://dqlhxe68y45r2" path="res://ui/interface/theme/font/default_font.tres" id="3_d6dio"]
->>>>>>> ba700f926a4c0914afc17950041f7f9b255a81b5:ui/interface/counter/Counter.tscn
 
 [node name="Counter" type="NinePatchRect"]
 texture = ExtResource("1")
@@ -47,36 +23,12 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Icon" type="TextureRect" parent="."]
->>>>>>> Stashed changes
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-<<<<<<< Updated upstream
-offset_left = -80.0
-offset_top = -40.0
-offset_bottom = 40.0
-grow_horizontal = 0
-grow_vertical = 2
-texture = ExtResource("2_20sao")
-flip_h = true
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -34.0
-offset_right = 82.0
-offset_bottom = 34.0
-grow_vertical = 2
-theme = ExtResource("3_d6dio")
-text = "10"
-horizontal_alignment = 1
-vertical_alignment = 1
-=======
 offset_left = 23.0
 offset_right = 103.0
 offset_bottom = 80.0
@@ -84,4 +36,3 @@ grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("4_r0wt8")
 stretch_mode = 4
->>>>>>> Stashed changes

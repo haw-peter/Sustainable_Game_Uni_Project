@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream
-[gd_scene load_steps=5 format=3 uid="uid://c3oljttxahkr1"]
-
-=======
 [gd_scene load_steps=8 format=3 uid="uid://bmxafsj7i4ru2"]
 
-<<<<<<< HEAD:interface/interface.tscn
 [ext_resource type="Script" path="res://interface/interface.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://bdgu0cicu0erv" path="res://interface/bar/LifeBar.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://dscw4mglk6dx6" path="res://interface/counter/Counter.tscn" id="3"]
@@ -12,49 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://cl7gsipfesj1p" path="res://interface/counter/GoldCounter.tscn" id="5_v6bx1"]
 [ext_resource type="PackedScene" uid="uid://bd75qmavfnqn0" path="res://interface/counter/house.tscn" id="6_jq5eq"]
 [ext_resource type="Script" path="res://interface/counter/Panel.gd" id="6_ydea5"]
-=======
->>>>>>> Stashed changes
-[ext_resource type="PackedScene" uid="uid://xpnpoqx3boq1" path="res://ui/interface/bar/life_bar/HealthBar.tscn" id="1_oiv5d"]
-[ext_resource type="PackedScene" uid="uid://bimu3msj5gyif" path="res://ui/interface/bar/waste_bar/WasteBar.tscn" id="2_pvc3m"]
-[ext_resource type="PackedScene" uid="uid://hhoapvy0ytho" path="res://ui/interface/counter/resources/wood/WoodCounter.tscn" id="3_vqmqm"]
-[ext_resource type="PackedScene" uid="uid://b751oeedmabhk" path="res://ui/interface/counter/resources/gold/GoldCounter.tscn" id="4_eke04"]
-<<<<<<< Updated upstream
-
-[node name="Interface" type="Control"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="HealthBar" parent="." instance=ExtResource("1_oiv5d")]
-layout_mode = 0
-offset_left = 0.0
-offset_top = 16.0
-offset_right = 166.0
-offset_bottom = 66.0
-
-[node name="WasteBar" parent="." instance=ExtResource("2_pvc3m")]
-layout_mode = 0
-offset_left = 0.0
-offset_top = 112.0
-offset_right = 166.0
-offset_bottom = 151.0
-
-[node name="WoodCounter" parent="." instance=ExtResource("3_vqmqm")]
-layout_mode = 0
-offset_left = 811.0
-offset_top = 19.0
-offset_right = 975.0
-offset_bottom = 66.0
-
-[node name="GoldCounter" parent="." instance=ExtResource("4_eke04")]
-layout_mode = 0
-offset_left = 979.0
-offset_top = 18.0
-offset_right = 1150.0
-offset_bottom = 66.0
-=======
->>>>>>> ba700f926a4c0914afc17950041f7f9b255a81b5:ui/interface/interface.tscn
 
 [node name="Interface" type="Control"]
 layout_mode = 3
@@ -120,6 +72,3 @@ offset_bottom = 28.0
 text = "00"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[connection signal="health_updated" from="." to="Bars/LifeBar" method="_on_Interface_health_updated"]
->>>>>>> Stashed changes
