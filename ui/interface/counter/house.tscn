@@ -10,6 +10,7 @@ offset_left = -10.0
 offset_top = -80.0
 offset_right = 11.0
 offset_bottom = 0.0
+text = "0"
 
 [node name="Icon" parent="." index="1"]
 offset_left = 33.0
