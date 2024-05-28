@@ -21,7 +21,7 @@ func _on_Timer_timeout():
 		
 	change_state = true
 	
-func _process(delta):
+func _process(_delta):
 	if change_state == false:
 		change_state = true
 		if state == "day":

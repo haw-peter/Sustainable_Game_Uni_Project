@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://jhtkraqldyme"]
+
+[ext_resource type="Texture2D" uid="uid://cnnb31bqirswa" path="res://background/tile-demo.png" id="1_376cy"]
+[ext_resource type="PackedScene" uid="uid://b3lyijp0w2ux8" path="res://CardUI/Scenes/card_ui.tscn" id="2_lk4bw"]
+[ext_resource type="Script" path="res://CardUI/Scenes/hand.gd" id="2_vs38x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0b0rn"]
+size = Vector2(1152, 466)
+
+[node name="TestScene" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(405, 469)
+texture = ExtResource("1_376cy")
+
+[node name="CardDropArea" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CardDropArea"]
+position = Vector2(577, 234)
+shape = SubResource("RectangleShape2D_0b0rn")
+
+[node name="Cards" type="CanvasLayer" parent="." groups=["ui_layer"]]
+
+[node name="Hand" type="HBoxContainer" parent="Cards"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -276.0
+offset_top = -150.0
+offset_right = 276.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 0
+alignment = 1
+script = ExtResource("2_vs38x")
+
+[node name="CardUI" parent="Cards/Hand" instance=ExtResource("2_lk4bw")]
+layout_mode = 2
+
+[node name="CardUI2" parent="Cards/Hand" instance=ExtResource("2_lk4bw")]
+layout_mode = 2
+
+[node name="CardUI3" parent="Cards/Hand" instance=ExtResource("2_lk4bw")]
+layout_mode = 2

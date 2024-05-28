@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://c3l7itki7dyc5"]
+
+[ext_resource type="PackedScene" uid="uid://8perof1x4lj2" path="res://Scenes/tilemap_main.tscn" id="1_l3huc"]
+[ext_resource type="Script" path="res://Scripts/tilemap_main.gd" id="2_nitlo"]
+[ext_resource type="PackedScene" uid="uid://jhtkraqldyme" path="res://CardUI/Scenes/test_scene.tscn" id="3_72m85"]
+[ext_resource type="Script" path="res://Scripts/Camera2D.gd" id="3_bcm6o"]
+[ext_resource type="PackedScene" uid="uid://c3oljttxahkr1" path="res://interface/interface.tscn" id="4_jylqt"]
+
+[node name="Main" type="Node"]
+
+[node name="Tilemap Main" parent="." instance=ExtResource("1_l3huc")]
+script = ExtResource("2_nitlo")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 328)
+script = ExtResource("3_bcm6o")
+EDGE_SCROLL = false
+
+[node name="Interface" parent="Camera2D" instance=ExtResource("4_jylqt")]
+offset_left = -575.0
+offset_top = -319.0
+offset_right = -535.0
+offset_bottom = -279.0
+
+[node name="TestScene" parent="." instance=ExtResource("3_72m85")]
