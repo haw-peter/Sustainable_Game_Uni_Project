@@ -9,7 +9,7 @@ var discard_pile: CardPile
 var draw_pile: CardPile
 
 # prototype for later, checks if card can be played based on parameters yet to be defined
-func can_play_card(card: Card) -> bool:
+func can_play_card(_card: Card) -> bool:
 	return false
 
 # creates a Deck we can add cards to without changing the original resource

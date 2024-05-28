@@ -7,11 +7,7 @@ func enter():
 	
 	if card_ui.tween and card_ui.tween.is_running():
 		card_ui.tween.kill()
-	
 	card_ui.reparent_requested.emit(card_ui)
-	card_ui.color.color = Color.WEB_GREEN
-	card_ui.label.text = "Base"
-	card_ui.pivot_offset = Vector2.ZERO
 
 
 func on_gui_input(event: InputEvent):
@@ -23,7 +19,6 @@ func on_mouse_entered():
 	card_ui.color.color = Color.STEEL_BLUE
 
 func on_mouse_exited():
-	card_ui.color.color = Color.WEB_GREEN
-
+	card_ui.color.color = card_ui.card.color
 
 

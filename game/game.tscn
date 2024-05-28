@@ -19,7 +19,6 @@ script = ExtResource("3_t8fih")
 EDGE_SCROLL = false
 
 [node name="WelcomeMessage" type="Control" parent="Camera2D"]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0

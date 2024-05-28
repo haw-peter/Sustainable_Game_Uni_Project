@@ -1,9 +1,13 @@
-[gd_resource type="Resource" script_class="Card" load_steps=2 format=3 uid="uid://ivsia3nugmyy"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://ivsia3nugmyy"]
 
-[ext_resource type="Script" path="res://CardUI/custom ressources/cards.gd" id="1_arjes"]
+[ext_resource type="Script" path="res://CardUI/Cards/Decks/draw_2.gd" id="1_335na"]
+[ext_resource type="Texture2D" uid="uid://dk237hcui7tji" path="res://CardUI/Cards/Decks/draw_2.png" id="1_s4urj"]
 
 [resource]
-script = ExtResource("1_arjes")
+script = ExtResource("1_335na")
 id = "draw_2"
 type = 3
-tile_id = 0
+tile_id = -1
+pic = ExtResource("1_s4urj")
+description = "Draw 2 cards from your Deck"
+color = Color(0.556941, 0.607834, 0.994913, 1)

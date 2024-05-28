@@ -16,3 +16,6 @@ func start_game(stats: PlayerStats):
 	print("Game has started!\n")
 
 # here should be the turn mechanics and the end condition
+
+func _on_button_pressed():
+	player_handler.draw_card()

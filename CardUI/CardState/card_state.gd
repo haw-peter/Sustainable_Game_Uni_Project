@@ -15,10 +15,10 @@ func enter():
 func exit():
 	pass
 
-func on_input(event: InputEvent):
+func on_input(_event: InputEvent):
 	pass
 
-func on_gui_input(event: InputEvent):
+func on_gui_input(_event: InputEvent):
 	pass
 
 func on_mouse_entered():

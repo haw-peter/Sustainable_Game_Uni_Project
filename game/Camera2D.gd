@@ -5,7 +5,7 @@ extends Camera2D
 var BorderSize = 30 # Variable to set the Bordersize for camera
 var CameraSpeed = 5 # Variable to adjust the camera movespeed
 
-func _process(delta):
+func _process(_delta):
 
 # Block to check if the Mouse is on the edge of the screen, if yes move the camera
 	if EDGE_SCROLL:

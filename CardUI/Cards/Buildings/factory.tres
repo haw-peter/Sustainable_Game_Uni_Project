@@ -1,9 +1,13 @@
-[gd_resource type="Resource" script_class="Card" load_steps=2 format=3 uid="uid://8ib8l8kca47h"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://8ib8l8kca47h"]
 
-[ext_resource type="Script" path="res://CardUI/custom ressources/cards.gd" id="1_mbbus"]
+[ext_resource type="Texture2D" uid="uid://ynveg65kib0h" path="res://game/hexTiles/PNG/Objects/oldBuilding.png" id="1_kcn4h"]
+[ext_resource type="Script" path="res://CardUI/Cards/Buildings/factory.gd" id="1_pxmv2"]
 
 [resource]
-script = ExtResource("1_mbbus")
-id = "factory"
+script = ExtResource("1_pxmv2")
+id = "Factory"
 type = 0
 tile_id = 7
+pic = ExtResource("1_kcn4h")
+description = "Place 1 Factory"
+color = Color(0.84372, 0.362676, 0.402394, 1)

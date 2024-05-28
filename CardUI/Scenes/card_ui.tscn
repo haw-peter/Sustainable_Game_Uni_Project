@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b3lyijp0w2ux8"]
+[gd_scene load_steps=12 format=3 uid="uid://b3lyijp0w2ux8"]
 
 [ext_resource type="Script" path="res://CardUI/Scenes/card_ui.gd" id="1_cvb8o"]
 [ext_resource type="Script" path="res://CardUI/Scenes/card_state_mashine.gd" id="2_64dvn"]
@@ -8,10 +8,19 @@
 [ext_resource type="Script" path="res://CardUI/CardState/card_released_state.gd" id="6_gjqdj"]
 [ext_resource type="Script" path="res://CardUI/CardState/card_aiming_state.gd" id="7_vlore"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7rxy1"]
+draw_center = false
+border_width_left = 2
+border_width_top = 1
+border_width_right = 2
+border_width_bottom = 1
+
 [sub_resource type="FontVariation" id="FontVariation_xk2wf"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1w1ld"]
+line_spacing = 1.0
 font = SubResource("FontVariation_xk2wf")
+font_size = 12
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_newti"]
@@ -39,6 +48,13 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2.50601, 3.75862)
+theme_override_styles/panel = SubResource("StyleBoxFlat_7rxy1")
+
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -47,41 +63,37 @@ anchor_bottom = 1.0
 offset_bottom = -127.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "CardTest
+text = "
 "
 label_settings = SubResource("LabelSettings_1w1ld")
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
-[node name="Type" type="Label" parent="."]
+[node name="Picture" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 23.0
+offset_right = 47.0
+offset_bottom = 63.0
+scale = Vector2(2.17748, 1.91397)
+expand_mode = 1
+
+[node name="Description" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 64.0
-offset_bottom = -63.0
+offset_top = 102.0
+offset_bottom = -25.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "CardTest
+text = "
 "
 label_settings = SubResource("LabelSettings_1w1ld")
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Id" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 128.0
-offset_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "CardTest
-"
-label_settings = SubResource("LabelSettings_1w1ld")
-horizontal_alignment = 1
-vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="DropPointDetector" type="Area2D" parent="."]
 collision_mask = 2

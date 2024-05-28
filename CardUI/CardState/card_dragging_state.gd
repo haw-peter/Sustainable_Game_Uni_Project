@@ -8,9 +8,6 @@ func enter():
 	if uiLayer:
 		card_ui.reparent(uiLayer)
 	
-	card_ui.color.color = Color.NAVY_BLUE
-	card_ui.label.text = "DRAGGING"
-	
 	minimum_drag_time_elapsed = false
 	var threshold_timer := get_tree().create_timer(DRAG_MINIMUM_THRESHOLD, false)
 	threshold_timer.timeout.connect(func(): minimum_drag_time_elapsed = true)
@@ -30,6 +27,7 @@ func on_input(event: InputEvent):
 		card_ui.global_position = card_ui.get_global_mouse_position() - card_ui.pivot_offset
 	
 	if cancel:
+		card_ui.color.color = card_ui.card.color
 		transition_requested.emit(self, CardState.State.BASE)
 	elif minimum_drag_time_elapsed and confirm and inside_play_area:
 		get_viewport().set_input_as_handled()
