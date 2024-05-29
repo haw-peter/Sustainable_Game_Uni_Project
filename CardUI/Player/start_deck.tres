@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="CardPile" load_steps=6 format=3 uid="uid://c1giffaekwn6g"]
 
-[ext_resource type="Resource" uid="uid://8ib8l8kca47h" path="res://CardUI/Cards/Buildings/factory.tres" id="1_fav7g"]
-[ext_resource type="Resource" uid="uid://kiedld7n60j7" path="res://CardUI/Cards/Buildings/house.tres" id="2_t6tug"]
-[ext_resource type="Resource" uid="uid://ivsia3nugmyy" path="res://CardUI/Cards/Decks/draw_2.tres" id="3_nvqt6"]
+[ext_resource type="Resource" uid="uid://cgq4gm1lcu6dq" path="res://CardUI/Cards/Buildings/eco_house.tres" id="1_cjrfv"]
+[ext_resource type="Resource" uid="uid://b6litskk34rbj" path="res://CardUI/Cards/Buildings/factory.tres" id="2_ysq01"]
+[ext_resource type="Resource" uid="uid://d17mxjbakbytw" path="res://CardUI/Cards/Buildings/house.tres" id="3_ksjrn"]
 [ext_resource type="Script" path="res://CardUI/custom ressources/card_pile.gd" id="4_22rde"]
-[ext_resource type="Resource" uid="uid://cet3je4d0r5u5" path="res://CardUI/Cards/Buildings/eco_house.tres" id="4_x5t53"]
+[ext_resource type="Resource" uid="uid://cycb3af5f6q5j" path="res://CardUI/Cards/Decks/draw_2.tres" id="4_gjyix"]
 
 [resource]
 script = ExtResource("4_22rde")
-cards = Array[Resource("res://CardUI/custom ressources/cards.gd")]([ExtResource("1_fav7g"), ExtResource("2_t6tug"), ExtResource("3_nvqt6"), ExtResource("2_t6tug"), ExtResource("1_fav7g"), ExtResource("4_x5t53"), ExtResource("4_x5t53")])
+cards = Array[Resource("res://CardUI/custom ressources/cards.gd")]([ExtResource("1_cjrfv"), ExtResource("1_cjrfv"), ExtResource("2_ysq01"), ExtResource("2_ysq01"), ExtResource("3_ksjrn"), ExtResource("3_ksjrn"), ExtResource("4_gjyix"), ExtResource("4_gjyix")])

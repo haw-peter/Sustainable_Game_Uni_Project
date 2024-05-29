@@ -1,13 +1,13 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://kiedld7n60j7"]
+[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://d17mxjbakbytw"]
 
-[ext_resource type="Texture2D" uid="uid://ch1fl052lcxtm" path="res://game/hexTiles/PNG/Objects/brickBuilding2.png" id="1_kfepo"]
-[ext_resource type="Script" path="res://CardUI/Cards/Buildings/house.gd" id="1_pxt71"]
+[ext_resource type="Script" path="res://CardUI/custom ressources/cards.gd" id="1_mfobq"]
+[ext_resource type="Texture2D" uid="uid://bsxcgyqan4lby" path="res://game/hexTiles/PNG/Objects/house.png" id="1_we07q"]
 
 [resource]
-script = ExtResource("1_pxt71")
+script = ExtResource("1_mfobq")
 id = "House"
 type = 0
-tile_id = 5
-pic = ExtResource("1_kfepo")
-description = "Place 1 normal House Tile"
-color = Color(0.147403, 0.65271, 0.457237, 1)
+tile_id = 4
+pic = ExtResource("1_we07q")
+description = "Place 1 House"
+color = Color(0, 0.490844, 0.322979, 1)

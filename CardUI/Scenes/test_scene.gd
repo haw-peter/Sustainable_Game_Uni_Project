@@ -5,6 +5,7 @@ extends Node2D
 @onready var turn_ui = $TurnUI as TurnUI
 @onready var player_handler: PlayerHandler = $PlayerHandler as PlayerHandler
 
+
 func _ready():
 	var new_stats: PlayerStats = player_stats.create_instance()
 	turn_ui.player_stats = new_stats

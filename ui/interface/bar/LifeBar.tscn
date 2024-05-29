@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://bdgu0cicu0erv"]
+[gd_scene load_steps=10 format=3 uid="uid://bdgu0cicu0erv"]
 
 [ext_resource type="Script" path="res://ui/interface/bar/bar.gd" id="1_qrhll"]
 [ext_resource type="Texture2D" uid="uid://cj7rncm1era2i" path="res://ui/interface/bar/meh.png" id="2_1kom4"]
 [ext_resource type="Script" path="res://ui/interface/bar/texture_progress.gd" id="2_04in3"]
 [ext_resource type="Texture2D" uid="uid://beglwxurlxpub" path="res://ui/interface/bar/bg.png" id="3_6yor1"]
 [ext_resource type="Texture2D" uid="uid://dsiyij2u5x7px" path="res://ui/interface/bar/fill.png" id="4_vrjv1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vkirf"]
 
 [sub_resource type="Animation" id="2"]
 resource_name = "SETUP"
@@ -68,10 +70,10 @@ tracks/1/path = NodePath("Count/Number:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(0.960938, 0.229355, 0.033783, 1), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 1), Color(0.960938, 0.229355, 0.033783, 1), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vq42b"]
@@ -118,12 +120,12 @@ offset_bottom = 49.5
 grow_horizontal = 0
 grow_vertical = 2
 text = "50"
+label_settings = SubResource("LabelSettings_vkirf")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Count"]
 libraries = {
 "": SubResource("AnimationLibrary_vq42b")
 }
-autoplay = "SETUP"
 
 [node name="TextureProgress" type="TextureProgressBar" parent="."]
 layout_mode = 2
@@ -137,4 +139,3 @@ root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_vq42b")
 }
-autoplay = "SETUP"

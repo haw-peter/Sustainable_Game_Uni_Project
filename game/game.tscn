@@ -1,15 +1,18 @@
-[gd_scene load_steps=9 format=3 uid="uid://c3l7itki7dyc5"]
+[gd_scene load_steps=11 format=3 uid="uid://c3l7itki7dyc5"]
 
 [ext_resource type="Script" path="res://game/startmessage.gd" id="1_1hsp5"]
+[ext_resource type="Script" path="res://game/game_control.gd" id="1_golcp"]
 [ext_resource type="PackedScene" uid="uid://8perof1x4lj2" path="res://game/tilemap_main.tscn" id="1_o1rrx"]
 [ext_resource type="Script" path="res://game/tilemap_main.gd" id="2_gog8k"]
+[ext_resource type="Resource" uid="uid://bfhwlttphtmto" path="res://CardUI/Player/player_stats.tres" id="2_q1igg"]
 [ext_resource type="Script" path="res://game/Camera2D.gd" id="3_t8fih"]
 [ext_resource type="PackedScene" uid="uid://bmxafsj7i4ru2" path="res://ui/interface/interface.tscn" id="4_hhpeu"]
-[ext_resource type="PackedScene" uid="uid://cbanw5cwe87gt" path="res://game/day_and_night_shift.tscn" id="5_0eutx"]
 [ext_resource type="AudioStream" uid="uid://doklfvdntoyw6" path="res://audio/mixkit-island-beat-250.mp3" id="7_vdrcm"]
 [ext_resource type="Script" path="res://audio/Background_music.gd" id="8_fhnbn"]
+[ext_resource type="PackedScene" uid="uid://jhtkraqldyme" path="res://CardUI/Scenes/test_scene.tscn" id="9_qesap"]
 
 [node name="Main" type="Node"]
+script = ExtResource("1_golcp")
 
 [node name="Tilemap Main" parent="." instance=ExtResource("1_o1rrx")]
 script = ExtResource("2_gog8k")
@@ -17,15 +20,7 @@ script = ExtResource("2_gog8k")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
 script = ExtResource("3_t8fih")
-
-[node name="Interface" parent="Camera2D" instance=ExtResource("4_hhpeu")]
-anchors_preset = 0
-anchor_right = 0.0
-offset_left = -577.0
-offset_top = -325.0
-offset_right = 575.0
-offset_bottom = 323.0
-grow_horizontal = 1
+EDGE_SCROLL = false
 
 [node name="WelcomeMessage" type="Control" parent="Camera2D"]
 layout_mode = 3
@@ -36,12 +31,24 @@ offset_bottom = 32.0
 script = ExtResource("1_1hsp5")
 metadata/_edit_use_anchors_ = true
 
-[node name="day_and_night_shift" parent="." instance=ExtResource("5_0eutx")]
+[node name="Interface" parent="Camera2D" instance=ExtResource("4_hhpeu")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -576.0
+offset_top = -323.0
+offset_right = 576.0
+offset_bottom = 325.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="Background_music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_vdrcm")
 volume_db = -5.596
 autoplay = true
 script = ExtResource("8_fhnbn")
+
+[node name="TestScene" parent="." instance=ExtResource("9_qesap")]
+player_stats = ExtResource("2_q1igg")
 
 [connection signal="tree_entered" from="Camera2D/WelcomeMessage" to="Background_music" method="_on_welcome_message_tree_entered"]

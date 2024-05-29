@@ -1,13 +1,13 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cet3je4d0r5u5"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cgq4gm1lcu6dq"]
 
-[ext_resource type="Texture2D" uid="uid://bsxcgyqan4lby" path="res://game/hexTiles/PNG/Objects/house.png" id="1_30iuf"]
+[ext_resource type="Texture2D" uid="uid://oxfecbqknnuy" path="res://game/hexTiles/PNG/Objects/house_small.png" id="1_hspnf"]
 [ext_resource type="Script" path="res://CardUI/Cards/Buildings/eco_house.gd" id="2_wpl5r"]
 
 [resource]
 script = ExtResource("2_wpl5r")
 id = "Eco-House"
 type = 0
-tile_id = 13
-pic = ExtResource("1_30iuf")
-description = "Place 1 eco friendly House"
-color = Color(2.31028e-06, 0.651883, 0.569954, 1)
+tile_id = 5
+pic = ExtResource("1_hspnf")
+description = "Place 1 Eco - House"
+color = Color(3.17663e-06, 0.769305, 0.253667, 1)
