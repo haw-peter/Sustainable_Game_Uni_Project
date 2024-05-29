@@ -11,3 +11,5 @@ tile_id = 7
 pic = ExtResource("1_kcn4h")
 description = "Place 1 Factory"
 color = Color(0.57099, 0, 0.060679, 1)
+cost = 50
+inhabitants = 10

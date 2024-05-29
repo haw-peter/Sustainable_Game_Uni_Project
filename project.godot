@@ -21,6 +21,10 @@ DialogManager="*res://ui/textbox/dialogmanager.tscn"
 NotificationManager="*res://ui/textbox/notificationmanager.gd"
 Events="*res://CardUI/global/events.gd"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [dotnet]
 
 project/assembly_name="SustainableGame"

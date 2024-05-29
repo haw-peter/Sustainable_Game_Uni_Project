@@ -1,13 +1,13 @@
 extends Node2D
 
 @export var player_stats: PlayerStats
+@onready var new_stats: PlayerStats = player_stats.create_instance()
 
 @onready var turn_ui = $TurnUI as TurnUI
 @onready var player_handler: PlayerHandler = $PlayerHandler as PlayerHandler
 
 
 func _ready():
-	var new_stats: PlayerStats = player_stats.create_instance()
 	turn_ui.player_stats = new_stats
 	
 	start_game(new_stats)

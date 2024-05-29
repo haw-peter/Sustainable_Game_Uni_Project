@@ -7,6 +7,7 @@
 script = ExtResource("1_t88fe")
 starting_deck = ExtResource("2_hbsvr")
 cards_per_turn = 3
-max_capital = 500
+max_capital = 9999
 min_capital = 0
-max_waste = 500
+max_waste = 100
+max_citizens = 9999

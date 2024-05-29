@@ -11,18 +11,21 @@ enum Type {BUILDING, RESOURCES, ENVIROMENT, DECKS}  #type of cards
 @export var description: String
 @export var color: Color
 
+@export var cost : int
+@export var inhabitants : int
+
 func is_effecting_map() -> bool:
 	return type == Type.BUILDING #returns true if CardType is BUILDING
 
 func card_type() -> String:
 	return Type.keys()[type]
 
-func play(_player_stats: PlayerStats):
-	apply_effects()
+func play(player_stats: PlayerStats):
+	apply_effects(player_stats)
 	Events.card_played.emit(self)
 	# here change the player stats
 	
 
 # abstract function for the specific cards
-func apply_effects():
+func apply_effects(player_stats: PlayerStats):
 	pass

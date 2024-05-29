@@ -1,5 +1,4 @@
 extends Card
 
-# here do things specified by the type of card
-func apply_effects():
+func apply_effects(player_stats: PlayerStats):
 	Events.draw_cards.emit(2)

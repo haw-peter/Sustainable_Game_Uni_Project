@@ -1,6 +1,7 @@
 extends Card
 
-# here do things specified by the type of card
-func apply_effects():
-	pass
+func apply_effects(player_stats: PlayerStats):
+	player_stats.capital -= self.cost
+	player_stats.citizens += self.inhabitants
+	player_stats.waste_multiplier -= 0.05
 

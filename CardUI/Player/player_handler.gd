@@ -7,7 +7,6 @@ const HAND_DRAW_INTERVAL = 0.25
 
 var player: PlayerStats
 
-
 func start_game(player_stats: PlayerStats):
 	player = player_stats
 	player.draw_pile = player.deck.duplicate(true)
