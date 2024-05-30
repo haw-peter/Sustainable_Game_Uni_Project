@@ -46,7 +46,7 @@ func _input(event):
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	#print("Selected Index", SelectedItem)
 	$TileMap.clear_layer(2)
 	$TileMap.set_cell(2, $TileMap.local_to_map(get_global_mouse_position()), 1, TileDic[SelectedItem],0) # 

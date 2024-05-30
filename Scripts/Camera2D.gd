@@ -3,7 +3,7 @@ extends Camera2D
 var BorderSize = 30 # Variable to set the Bordersize for camera
 var CameraSpeed = 30 # Variable to adjust the camera movespeed
 
-func _process(delta):
+func _process(_delta):
 
 # Block to check if the Mouse is on the edge of the screen, if yes move the camera
 	if get_viewport().get_mouse_position().x <= BorderSize:
@@ -29,11 +29,14 @@ func _input(event):
 		#if Input.is_action_pressed("CameraMove"):
 			#position += Vector2(-event.relative.x / 2, -event.relative.y / 2)
 	# Zooms in/out Camera with Mwheel
-	if event.is_action_pressed("Zoom+"):
-		zoom = zoom + Vector2(0.1, 0.1)
-	if event.is_action_pressed("Zoom-"):
-		zoom = zoom - Vector2(0.1, 0.1)
-
+	if zoom.x < 1.6 :
+		if event.is_action_pressed("Zoom+") :
+			zoom = zoom + Vector2(0.1, 0.1)
+	if zoom.x > 0.4 :
+		if event.is_action_pressed("Zoom-"):
+			zoom = zoom - Vector2(0.1, 0.1)
+			
+	scale = Vector2(1 / zoom.x, 1 / zoom.y)
    # Print the size of the viewport.
 	#print("Viewport Resolution is: ", get_viewport().get_visible_rect().size)
 	#print("Viewport Zoom: ", zoom)
