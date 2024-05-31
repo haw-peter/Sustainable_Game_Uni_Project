@@ -39,7 +39,7 @@ func start_dialog(position: Vector2, lines: Array[String]):
 	is_dialog_active = true
 
 func _show_notification_box():
-	if NotificationManager.notification_parent != null:
+	if NotificationManager.notification_parent != null && notification_line != "":
 		notification_box = text_box_scene.instantiate()
 		notification_box.finished_displaying.connect(_on_notification_box_finished_displaying)
 		NotificationManager.notification_parent.add_child(notification_box)

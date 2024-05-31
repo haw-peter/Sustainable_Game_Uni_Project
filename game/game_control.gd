@@ -4,7 +4,11 @@ extends Node
 var time : Vector2i = Vector2i(12, 0)# in game Timer x = hours y = minutes
 var player_stats : PlayerStats
 
+const startMessage: String = "Hello Player! Welcome to our city! We love it here and want to see the city grow and prosper. Maybe you can help us?"
 
+func _ready():
+	DialogManager.start_notification(startMessage)
+	
 func _on_timer_timeout():
 	time.y = (time.y + 1) % 60
 	if time.y == 0:

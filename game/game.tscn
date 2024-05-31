@@ -1,6 +1,5 @@
-[gd_scene load_steps=11 format=3 uid="uid://c3l7itki7dyc5"]
+[gd_scene load_steps=10 format=3 uid="uid://c3l7itki7dyc5"]
 
-[ext_resource type="Script" path="res://game/startmessage.gd" id="1_1hsp5"]
 [ext_resource type="Script" path="res://game/game_control.gd" id="1_golcp"]
 [ext_resource type="PackedScene" uid="uid://8perof1x4lj2" path="res://game/tilemap_main.tscn" id="1_o1rrx"]
 [ext_resource type="Script" path="res://game/tilemap_main.gd" id="2_gog8k"]
@@ -22,16 +21,6 @@ position = Vector2(576, 324)
 script = ExtResource("3_t8fih")
 EDGE_SCROLL = false
 
-[node name="WelcomeMessage" type="Control" parent="Camera2D"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -15.0
-offset_top = -16.0
-offset_right = 17.0
-offset_bottom = 16.0
-script = ExtResource("1_1hsp5")
-metadata/_edit_use_anchors_ = true
-
 [node name="Interface" parent="Camera2D" instance=ExtResource("4_hhpeu")]
 anchors_preset = 0
 anchor_right = 0.0
@@ -50,6 +39,7 @@ autoplay = true
 script = ExtResource("8_fhnbn")
 
 [node name="TestScene" parent="." instance=ExtResource("9_qesap")]
+position = Vector2(26, 6)
 player_stats = ExtResource("2_q1igg")
 
 [node name="Timer" type="Timer" parent="."]
