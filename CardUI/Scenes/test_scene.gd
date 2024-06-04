@@ -5,10 +5,7 @@ extends Node2D
 @onready var turn_ui = $TurnUI as TurnUI
 @onready var player_handler: PlayerHandler = $PlayerHandler as PlayerHandler
 
-#var script_instance = preload("res://ui/ui-logs.gd").new()
-#var game_over_scene = "res://menu/end_menu.tscn"
-#@onready var game_over_scene: PackedScene = preload("res://menu/end_menu.tscn")
-
+var script_instance = preload("res://ui/ui-logs.gd").new()
 
 func _ready():
 	turn_ui.player_stats = new_stats
@@ -30,7 +27,8 @@ func start_game(stats: PlayerStats):
 func _check_waste_level():
 	if new_stats.waste >= 1:
 		end_game()
-		#script_instance.export_log_to_csv("res://ui/logs.txt")
+		script_instance.export_log_to_csv("user://logs/godot.log", "res://ui/logs.csv")
+		
 
 func end_game():
 		if(self.is_inside_tree()):
