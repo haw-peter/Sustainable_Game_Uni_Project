@@ -1,10 +1,13 @@
 extends Node2D
-
 @export var player_stats: PlayerStats
 @onready var new_stats: PlayerStats = player_stats.create_instance()
 
 @onready var turn_ui = $TurnUI as TurnUI
 @onready var player_handler: PlayerHandler = $PlayerHandler as PlayerHandler
+
+#var script_instance = preload("res://ui/ui-logs.gd").new()
+#var game_over_scene = "res://menu/end_menu.tscn"
+#@onready var game_over_scene: PackedScene = preload("res://menu/end_menu.tscn")
 
 
 func _ready():
@@ -12,11 +15,27 @@ func _ready():
 	
 	start_game(new_stats)
 
+	new_stats.resources_changed.connect(_check_waste_level)
+		
+		
+
+
 func start_game(stats: PlayerStats):
 	player_handler.start_game(stats)
 	print("Game has started!\n")
 
+
 # here should be the turn mechanics and the end condition
+
+func _check_waste_level():
+	if new_stats.waste >= 1:
+		end_game()
+		#script_instance.export_log_to_csv("res://ui/logs.txt")
+
+func end_game():
+		if(self.is_inside_tree()):
+			get_tree().change_scene_to_file("res://menu/end_menu.tscn")
+			print("Game Over! Waste level exceeded 100.")	
 
 func _on_button_pressed():
 	player_handler.draw_card()

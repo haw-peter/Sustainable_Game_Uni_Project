@@ -6,15 +6,15 @@
 [node name="Counter" instance=ExtResource("1_nul1b")]
 
 [node name="Number" parent="." index="0"]
-offset_left = -7.0
-offset_top = 162.0
-offset_right = 9.0
-offset_bottom = 242.0
+offset_left = 77.0
+offset_top = -72.0
+offset_right = 87.0
+offset_bottom = -2.0
 text = "0"
 
 [node name="Icon" parent="." index="1"]
-offset_left = 16.0
-offset_top = 160.0
-offset_right = 91.0
-offset_bottom = 247.0
+offset_left = 92.0
+offset_top = -93.0
+offset_right = 172.0
+offset_bottom = -19.0
 texture = ExtResource("2_med3a")

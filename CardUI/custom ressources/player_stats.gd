@@ -17,6 +17,7 @@ func create_instance() -> Resource:
 	var instance: PlayerStats = self.duplicate()
 	instance.capital = 500
 	instance.waste = 0
+	instance.houses = 0
 	instance.happiness = 50
 	instance.citizens = 0
 	instance.waste_multiplier = 0.01
@@ -25,3 +26,4 @@ func create_instance() -> Resource:
 	instance.draw_pile = CardPile.new()
 	instance.discard_pile = CardPile.new()
 	return instance
+

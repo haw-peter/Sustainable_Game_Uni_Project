@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://dkjdrujgd0uc4"
+
+[deps]
+
+files=["res://ui/logs.Building.translation", "res://ui/logs.Population.translation", "res://ui/logs.Happiness.translation", "res://ui/logs.Pollution.translation"]
+
+source_file="res://ui/logs.csv"
+dest_files=["res://ui/logs.Building.translation", "res://ui/logs.Population.translation", "res://ui/logs.Happiness.translation", "res://ui/logs.Pollution.translation"]
+
+[params]
+
+compress=true
+delimiter=0

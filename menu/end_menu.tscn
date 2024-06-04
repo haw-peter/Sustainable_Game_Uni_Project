@@ -6,7 +6,7 @@
 font_names = PackedStringArray("Impact")
 subpixel_positioning = 0
 
-[node name="Control" type="Control"]
+[node name="Menu" type="Control"]
 layout_mode = 3
 anchor_right = 1.073
 anchor_bottom = 1.09
