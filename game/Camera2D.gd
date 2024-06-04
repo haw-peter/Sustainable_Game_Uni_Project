@@ -40,10 +40,11 @@ func _process(_delta):
 
 func _input(event):
 	
-	# Zooms in/out Camera with Mwheel
-	if event.is_action_pressed("Zoom+"):
-		if zoom.x < 3:
-			zoom = zoom + Vector2(0.05, 0.05)
-	if event.is_action_pressed("Zoom-"):
-		if zoom.x > 0.1:
-			zoom = zoom - Vector2(0.05, 0.05)
+	if zoom.x < 1.6 :
+			if event.is_action_pressed("Zoom+") :
+				zoom = zoom + Vector2(0.1, 0.1)
+	if zoom.x > 0.4 :
+		if event.is_action_pressed("Zoom-"):
+				zoom = zoom - Vector2(0.1, 0.1)
+			
+	scale = Vector2(1 / zoom.x, 1 / zoom.y)

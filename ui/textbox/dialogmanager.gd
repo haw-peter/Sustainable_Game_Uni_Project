@@ -16,10 +16,10 @@ var is_dialog_active = false
 var can_advance_line = false
 
 func _ready():
-	if NotificationManager.notification_parent != null:
+	if NotificationManager.notification_parent != null :
 		_show_notification_box()
 	else:
-		NotificationManager.connect("notification_parent_set", Callable(self, "_show_notification_box"))
+		NotificationManager.connect("notification_parent_set", Callable(self, "_show_notification_box")) #issue
 
 func start_notification(line: String):
 	notification_line = line
