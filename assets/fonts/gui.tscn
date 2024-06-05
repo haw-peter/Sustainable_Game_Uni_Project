@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://rh2yml02t05q"]
+
+[ext_resource type="PackedScene" uid="uid://5f1cgb8t0ti6" path="res://assets/dependent_scenes/bar.tscn" id="2_2f8m5"]
+[ext_resource type="PackedScene" uid="uid://dbcus5dy2ogiu" path="res://assets/dependent_scenes/counters.tscn" id="2_26l24"]
+
+[node name="Gui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Bars" parent="MarginContainer" instance=ExtResource("2_2f8m5")]
+layout_mode = 2
+
+[node name="Counters" parent="MarginContainer" instance=ExtResource("2_26l24")]
+layout_mode = 2
+alignment = 2

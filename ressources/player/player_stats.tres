@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PlayerStats" load_steps=3 format=3 uid="uid://bfhwlttphtmto"]
+
+[ext_resource type="Script" path="res://scripts/cards/misc/player_stats.gd" id="1_t88fe"]
+[ext_resource type="Resource" uid="uid://bdx16g0naij3u" path="res://ressources/cards/start_deck.tres" id="2_hbsvr"]
+
+[resource]
+script = ExtResource("1_t88fe")
+starting_deck = ExtResource("2_hbsvr")
+cards_per_turn = 3
+max_capital = 9999
+min_capital = 0
+max_waste = 100
+max_citizens = 9999

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CardPile" load_steps=6 format=3 uid="uid://bdx16g0naij3u"]
+
+[ext_resource type="Resource" uid="uid://cycb3af5f6q5j" path="res://ressources/cards/draw_2.tres" id="1_2hmfa"]
+[ext_resource type="Resource" uid="uid://cgq4gm1lcu6dq" path="res://ressources/cards/eco_house.tres" id="2_ptyur"]
+[ext_resource type="Resource" uid="uid://b6litskk34rbj" path="res://ressources/cards/factory.tres" id="3_q7p2n"]
+[ext_resource type="Script" path="res://scripts/cards/misc/card_pile.gd" id="4_22rde"]
+[ext_resource type="Resource" uid="uid://d17mxjbakbytw" path="res://ressources/cards/house.tres" id="4_tl3w8"]
+
+[resource]
+script = ExtResource("4_22rde")
+cards = Array[Resource("res://scripts/global/cards.gd")]([ExtResource("1_2hmfa"), ExtResource("2_ptyur"), ExtResource("3_q7p2n"), ExtResource("4_tl3w8"), ExtResource("4_tl3w8")])

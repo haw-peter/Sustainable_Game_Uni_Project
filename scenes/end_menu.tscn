@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://d7ksis4oi55g"]
+
+[ext_resource type="Texture2D" uid="uid://dr3p4edyj2new" path="res://assets/graphics/background/Green-Hexagon-Polygon-Background-Graphics-4189000-1.jpg" id="1_3ivlc"]
+
+[sub_resource type="SystemFont" id="SystemFont_ophay"]
+font_names = PackedStringArray("Impact")
+subpixel_positioning = 0
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchor_right = 1.073
+anchor_bottom = 1.09
+offset_right = -84.0961
+offset_bottom = -58.32
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 626.0
+offset_bottom = 384.0
+texture = ExtResource("1_3ivlc")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 645.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 6
+theme_override_constants/outline_size = 18
+theme_override_fonts/font = SubResource("SystemFont_ophay")
+theme_override_font_sizes/font_size = 64
+text = "GAME OVER!"
+horizontal_alignment = 1
+vertical_alignment = 2

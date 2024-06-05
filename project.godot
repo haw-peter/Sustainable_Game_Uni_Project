@@ -11,15 +11,15 @@ config_version=5
 [application]
 
 config/name="SustainableGame"
-run/main_scene="res://menu/main_menu.tscn"
+run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-DialogManager="*res://ui/textbox/dialogmanager.tscn"
-NotificationManager="*res://ui/textbox/notificationmanager.gd"
-Events="*res://CardUI/global/events.gd"
+DialogManager="*res://scenes/dialogmanager.tscn"
+NotificationManager="*res://scripts/global/notificationmanager.gd"
+Events="*res://scripts/global/card_events.gd"
 
 [display]
 
