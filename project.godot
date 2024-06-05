@@ -19,7 +19,7 @@ config/icon="res://icon.svg"
 
 DialogManager="*res://scenes/dialogmanager.tscn"
 NotificationManager="*res://scripts/global/notificationmanager.gd"
-Events="*res://scripts/global/card_events.gd"
+Events="*res://scripts/global/events.gd"
 
 [display]
 

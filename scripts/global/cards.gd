@@ -10,12 +10,13 @@ enum Type {BUILDING, RESOURCES, ENVIROMENT, DECKS}  #type of cards
 @export var pic: Texture
 @export var description: String
 @export var color: Color
+@export var layer: int = 1
 
 @export var cost : int
 @export var inhabitants : int
 
 func is_effecting_map() -> bool:
-	return type == Type.BUILDING #returns true if CardType is BUILDING
+	return (type == Type.BUILDING) || (type == Type.ENVIROMENT) #returns true if CardType is BUILDING or ENVIRONMENT
 
 func card_type() -> String:
 	return Type.keys()[type]

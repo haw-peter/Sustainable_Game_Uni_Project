@@ -9,5 +9,5 @@ signal delete_card(card_ui: CardUI)
 signal player_hand_drawn
 
 signal draw_cards(amount: int)
-signal place_tile()
+signal place_tile(card: Card)
 signal tile_placed()

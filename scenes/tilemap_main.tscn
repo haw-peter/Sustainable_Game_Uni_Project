@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://8perof1x4lj2"]
+[gd_scene load_steps=34 format=3 uid="uid://8perof1x4lj2"]
 
 [ext_resource type="Texture2D" uid="uid://b1oy0hyyb1ik6" path="res://assets/graphics/hexTiles/Spritesheets/hexagonTerrain_sheet.png" id="1_yiaw3"]
 [ext_resource type="Texture2D" uid="uid://dsfyuxo6kkv6w" path="res://assets/graphics/hexTiles/Spritesheets/hexagonBuildings_sheet.png" id="2_cpk4c"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c65drps0sqxlx" path="res://assets/graphics/hexTiles/PNG/Tiles/Modern/modern_trailerpark.png" id="5_lhhwj"]
 [ext_resource type="Texture2D" uid="uid://bimnivfeks6xq" path="res://assets/graphics/hexTiles/PNG/Tiles/Modern/modern_villa.png" id="6_txtil"]
 [ext_resource type="Texture2D" uid="uid://dwsh7kti6cats" path="res://assets/graphics/hexTiles/PNG/Tiles/Modern/modern_villageLarge.png" id="7_er71q"]
+[ext_resource type="Texture2D" uid="uid://dfni4xsha26o8" path="res://assets/graphics/hexTiles/PNG/Tiles/Terrain/Grass/grass_05.png" id="8_3dq8a"]
 [ext_resource type="Texture2D" uid="uid://kodbvvemr3qi" path="res://assets/graphics/hexTiles/PNG/Tiles/Modern/modern_campsite.png" id="8_qc4uk"]
 [ext_resource type="Texture2D" uid="uid://re4io48ienli" path="res://assets/graphics/hexTiles/PNG/Tiles/Modern/modern_cornerShop.png" id="9_8h46m"]
 [ext_resource type="Texture2D" uid="uid://de5ixqhslg7qg" path="res://assets/graphics/hexTiles/PNG/Tiles/Modern/modern_house.png" id="10_u6j4s"]
@@ -209,6 +210,11 @@ texture = ExtResource("7_er71q")
 texture_region_size = Vector2i(120, 140)
 0:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dxboa"]
+texture = ExtResource("8_3dq8a")
+texture_region_size = Vector2i(120, 140)
+0:0/0 = 0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tnk78"]
 texture = ExtResource("8_qc4uk")
 texture_region_size = Vector2i(120, 140)
@@ -267,6 +273,7 @@ sources/11 = SubResource("TileSetAtlasSource_ytdtp")
 sources/12 = SubResource("TileSetAtlasSource_8ra0s")
 sources/13 = SubResource("TileSetAtlasSource_waee4")
 sources/14 = SubResource("TileSetAtlasSource_hi80a")
+sources/15 = SubResource("TileSetAtlasSource_dxboa")
 
 [node name="Tilemap Main" type="Node2D"]
 

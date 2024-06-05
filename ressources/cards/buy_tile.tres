@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://u3jdbo8t8oeu"]
+
+[ext_resource type="Script" path="res://scripts/cards/misc/buy_tile.gd" id="1_ufu8e"]
+
+[resource]
+script = ExtResource("1_ufu8e")
+id = "Buy Tile"
+type = 2
+tile_id = 15
+description = ""
+color = Color(0.803922, 0.67451, 0, 1)
+layer = 0
+cost = 300
+inhabitants = 0

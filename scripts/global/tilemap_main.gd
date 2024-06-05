@@ -50,10 +50,20 @@ func hide_cursor():
 	aiming = false
 	tilemap.set_layer_enabled(2, !true)
 
-func place_tile():
+func place_tile(card: Card):
+	if(card.layer == 0 && is_neighbor_tiles()):
+		$TileMap.set_cell(0, $TileMap.local_to_map(get_global_mouse_position()), selected_tile, Vector2i.ZERO, 0)
+		Events.tile_placed.emit()
+		return
 	if($TileMap.get_cell_source_id(0,$TileMap.local_to_map(get_global_mouse_position())) == -1):
 		return
 	else:
 		$TileMap.set_cell(1, $TileMap.local_to_map(get_global_mouse_position()), selected_tile, Vector2i.ZERO, 0)
 		Events.tile_placed.emit()
-
+		
+func is_neighbor_tiles()-> bool:
+	var neighbors = $TileMap.get_surrounding_cells($TileMap.local_to_map(get_global_mouse_position()))
+	for n in range (0, neighbors.size()):
+		if($TileMap.get_cell_source_id(0, neighbors[n]) != -1):
+			return true
+	return false
