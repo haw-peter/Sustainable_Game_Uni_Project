@@ -1,0 +1,53 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+<<<<<<< Updated upstream:fonts/Tippa.ttf.import
+<<<<<<<< Updated upstream:assets/fonts/Tippa.ttf.import
+uid="uid://c635a3kla6hl1"
+path="res://.godot/imported/Tippa.ttf-a095b692ccb985a903952096db88768b.fontdata"
+
+[deps]
+
+source_file="res://fonts/Tippa.ttf"
+dest_files=["res://.godot/imported/Tippa.ttf-a095b692ccb985a903952096db88768b.fontdata"]
+========
+uid="uid://nn7yal2irqx0"
+path="res://.godot/imported/pixelfont.ttf-37362ae4349ca3463d3bdaaa37aa89d6.fontdata"
+
+[deps]
+
+source_file="res://assets/fonts/pixelfont.ttf"
+dest_files=["res://.godot/imported/pixelfont.ttf-37362ae4349ca3463d3bdaaa37aa89d6.fontdata"]
+>>>>>>>> Stashed changes:assets/fonts/pixelfont.ttf.import
+=======
+uid="uid://7dxvwm7qtwjp"
+path="res://.godot/imported/Tippa.ttf-09369dae21d743a71470280b5df51d04.fontdata"
+
+[deps]
+
+source_file="res://assets/fonts/Tippa.ttf"
+dest_files=["res://.godot/imported/Tippa.ttf-09369dae21d743a71470280b5df51d04.fontdata"]
+>>>>>>> Stashed changes:assets/fonts/Tippa.ttf.import
+
+[params]
+
+Rendering=null
+antialiasing=1
+generate_mipmaps=false
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+hinting=1
+subpixel_positioning=1
+oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[]
+language_support={}
+script_support={}
+opentype_features={}

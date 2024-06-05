@@ -1,0 +1,51 @@
+[gd_scene load_steps=11 format=3 uid="uid://c3l7itki7dyc5"]
+
+[ext_resource type="Script" path="res://scripts/global/game_control.gd" id="1_ybfl2"]
+[ext_resource type="PackedScene" uid="uid://8perof1x4lj2" path="res://scenes/tilemap_main.tscn" id="2_wfs6h"]
+[ext_resource type="Script" path="res://scripts/global/tilemap_main.gd" id="3_euatm"]
+[ext_resource type="Script" path="res://scripts/global/Camera2D.gd" id="4_71376"]
+[ext_resource type="PackedScene" uid="uid://b2pdm87dj1ys8" path="res://scenes/gui.tscn" id="5_23lu3"]
+[ext_resource type="PackedScene" path="res://ui/interface/interface.tscn" id="5_m5lwb"]
+[ext_resource type="AudioStream" uid="uid://doklfvdntoyw6" path="res://assets/audio/mixkit-island-beat-250.mp3" id="6_jvfx1"]
+[ext_resource type="Script" path="res://assets/audio/Background_music.gd" id="7_wvqdj"]
+[ext_resource type="PackedScene" uid="uid://jhtkraqldyme" path="res://scenes/test_scene.tscn" id="8_j58jo"]
+[ext_resource type="Resource" uid="uid://bfhwlttphtmto" path="res://ressources/player/player_stats.tres" id="9_0rqmf"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_ybfl2")
+
+[node name="Tilemap Main" parent="." instance=ExtResource("2_wfs6h")]
+script = ExtResource("3_euatm")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+script = ExtResource("4_71376")
+EDGE_SCROLL = false
+
+[node name="Interface" parent="Camera2D" instance=ExtResource("5_m5lwb")]
+offset_left = -575.0
+offset_top = -324.0
+offset_right = 573.0
+offset_bottom = 321.0
+
+[node name="Gui" parent="Camera2D" instance=ExtResource("5_23lu3")]
+offset_left = -578.0
+offset_top = -323.0
+offset_right = 574.0
+offset_bottom = 326.0
+
+[node name="Background_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_jvfx1")
+volume_db = -5.596
+autoplay = true
+script = ExtResource("7_wvqdj")
+
+[node name="TestScene" parent="." instance=ExtResource("8_j58jo")]
+position = Vector2(20, 134)
+player_stats = ExtResource("9_0rqmf")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="ready" from="TestScene" to="." method="_on_test_scene_ready"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
