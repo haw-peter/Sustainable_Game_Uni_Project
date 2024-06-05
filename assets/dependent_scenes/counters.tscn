@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dbcus5dy2ogiu"]
 
-[ext_resource type="Texture2D" uid="uid://bg5wftsms1eud" path="res://assets/graphics/ui/bar_backround.png" id="1_s4ywa"]
-[ext_resource type="FontFile" uid="uid://7dxvwm7qtwjp" path="res://assets/fonts/Tippa.ttf" id="2_jhcb8"]
+[ext_resource type="Texture2D" uid="uid://2c21rxxhwuiy" path="res://assets/graphics/ui/bar_backround.png" id="1_s4ywa"]
+[ext_resource type="FontFile" uid="uid://dl6f7clanpw2n" path="res://assets/fonts/Tippa.ttf" id="2_jhcb8"]
 
 [node name="Counters" type="HBoxContainer"]
 

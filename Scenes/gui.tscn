@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://b2pdm87dj1ys8"]
 
 [ext_resource type="Script" path="res://scripts/global/gui_interface.gd" id="1_1qr3e"]
-[ext_resource type="PackedScene" uid="uid://5f1cgb8t0ti6" path="res://scenes/bar.tscn" id="2_2f8m5"]
-[ext_resource type="PackedScene" uid="uid://dbcus5dy2ogiu" path="res://scenes/counters.tscn" id="2_26l24"]
+[ext_resource type="PackedScene" uid="uid://5f1cgb8t0ti6" path="res://assets/dependent_scenes/bar.tscn" id="2_2f8m5"]
+[ext_resource type="PackedScene" uid="uid://dbcus5dy2ogiu" path="res://assets/dependent_scenes/counters.tscn" id="2_26l24"]
 
 [node name="Gui" type="Control"]
 layout_mode = 3

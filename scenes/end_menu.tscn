@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://d7ksis4oi55g"]
 
-[ext_resource type="Texture2D" uid="uid://cb0cndpfyhjd5" path="res://assets/graphics/background/Green-Hexagon-Polygon-Background-Graphics-4189000-1.jpg" id="1_3ivlc"]
+[ext_resource type="Texture2D" uid="uid://dr3p4edyj2new" path="res://assets/graphics/background/Green-Hexagon-Polygon-Background-Graphics-4189000-1.jpg" id="1_3ivlc"]
 
 [sub_resource type="SystemFont" id="SystemFont_ophay"]
 font_names = PackedStringArray("Impact")

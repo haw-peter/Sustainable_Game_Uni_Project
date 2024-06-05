@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2pdm87dj1ys8"]
+[gd_scene load_steps=3 format=3 uid="uid://rh2yml02t05q"]
 
-[ext_resource type="PackedScene" uid="uid://5f1cgb8t0ti6" path="res://scenes/bar.tscn" id="2_2f8m5"]
-[ext_resource type="PackedScene" uid="uid://dbcus5dy2ogiu" path="res://scenes/counters.tscn" id="2_26l24"]
+[ext_resource type="PackedScene" uid="uid://5f1cgb8t0ti6" path="res://assets/dependent_scenes/bar.tscn" id="2_2f8m5"]
+[ext_resource type="PackedScene" uid="uid://dbcus5dy2ogiu" path="res://assets/dependent_scenes/counters.tscn" id="2_26l24"]
 
 [node name="Gui" type="Control"]
 layout_mode = 3

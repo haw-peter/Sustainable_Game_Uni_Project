@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://jhtkraqldyme"]
 
-[ext_resource type="Script" path="res://scripts/test_scene.gd" id="1_e00ii"]
+[ext_resource type="Script" path="res://scripts/global/test_scene.gd" id="1_e00ii"]
 [ext_resource type="Script" path="res://scripts/player/player_handler.gd" id="1_sokf2"]
 [ext_resource type="Script" path="res://scripts/player/turn_ui.gd" id="3_x3k76"]
 [ext_resource type="Script" path="res://scripts/cards/misc/hand.gd" id="4_lji6h"]

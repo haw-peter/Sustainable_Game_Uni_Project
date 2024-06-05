@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://mh6iya4fk1o2"]
+
+[ext_resource type="PackedScene" uid="uid://dscw4mglk6dx6" path="res://ui/interface/counter/Counter.tscn" id="1_nul1b"]
+[ext_resource type="Texture2D" uid="uid://b4hykqqvu7fmt" path="res://ui/interface/counter/citizen.png" id="2_med3a"]
+
+[node name="Counter" instance=ExtResource("1_nul1b")]
+
+[node name="Number" parent="." index="0"]
+offset_left = -7.0
+offset_top = 162.0
+offset_right = 9.0
+offset_bottom = 242.0
+text = "0"
+
+[node name="Icon" parent="." index="1"]
+offset_left = 16.0
+offset_top = 160.0
+offset_right = 91.0
+offset_bottom = 247.0
+texture = ExtResource("2_med3a")
