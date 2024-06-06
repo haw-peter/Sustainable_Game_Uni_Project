@@ -9,14 +9,14 @@ signal resources_changed
 @export var min_capital = 0
 @export var max_waste = 500
 @export var max_citizens = 9999
-@export var max_houses = 25
+@export var max_houses = 25 #new (because we have 25 places on the map)
 
 # here are the resources of the player 
 var capital: int : set = set_capital
 var waste: float : set = set_waste
 var happiness : int : set = set_happiness
 var citizens : int : set = set_citizens
-var houses : int : set = set_houses
+var houses : int : set = set_houses #new
 
 var waste_multiplier : float : set = set_waste_multiplier
 var happiness_multiplier : float : set = set_happiness_multiplier
@@ -38,7 +38,7 @@ func set_citizens(value: int):
 	citizens = clampi(value, 0 , max_citizens)
 	resources_changed.emit()
 	
-func set_houses(value: int):
+func set_houses(value: int): #new
 	houses = clampi(value, 0 , max_houses)
 	resources_changed.emit()	
 	
@@ -52,7 +52,7 @@ func set_happiness_multiplier(value: float):
 func change_capital(amount: int):
 	self.capital += amount
 
-func change_houses(amount: int):
+func change_houses(amount: int): #new
 	self.houses += amount
 	
 func change_waste(amount: float):
@@ -68,7 +68,7 @@ func create_instance() -> Resource:
 	var instance: PlayerStats = self.duplicate()
 	instance.capital = 500
 	instance.waste = 0
-	instance.houses = 0
+	instance.houses = 0 #new
 	instance.happiness = 50
 	instance.citizens = 0
 	instance.waste_multiplier = 1.0

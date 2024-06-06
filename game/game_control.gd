@@ -17,31 +17,29 @@ func _on_timer_timeout():
 	$Camera2D/Interface/Panel/Hours.text = "%02d :" % time.x
 	$Camera2D/Interface/Panel/Minutes.text = "%02d" % time.y
 	
-	#$Camera2D/Interface.emit_signal("times_changed", time.x, time.y)
 	
 	if (time.y % 10) == 0:
 		player_stats.change_capital(round(player_stats.citizens / 10))
 		player_stats.change_waste(calc_waste_incease())
 		player_stats.change_happiness(calc_happiness_increase())
-		#print("Timestamp: ", $Camera2D/Interface/Panel/Hours.text, $Camera2D/Interface/Panel/Minutes.text)
 
 func update_interface():
 	$Camera2D/Interface.emit_signal("gold_updated", player_stats.capital)
-	$Camera2D/Interface.emit_signal("house_updated", player_stats.houses)
+	$Camera2D/Interface.emit_signal("house_updated", player_stats.houses) # added house emit signal and removed the wood
 	$Camera2D/Interface.emit_signal("citizen_updated", player_stats.citizens)
 	$Camera2D/Interface.emit_signal("health_bar_changed", player_stats.happiness)
 	$Camera2D/Interface.emit_signal("waste_bar_changed", player_stats.waste)
 
 # waste multiplier is influenced by the type of building you place
 func calc_waste_incease() -> float:
-	#print(player_stats.waste_multiplier)
-	#print(player_stats.waste)
+	#print(player_stats.waste_multiplier) ## commented out
+	#print(player_stats.waste)	 ## commented out
 	var waste_increase = (player_stats.citizens * player_stats.waste_multiplier)
 	return waste_increase
 
-func calc_happiness_increase() -> float:
+func calc_happiness_increase() -> float: #new calc for happiness (just a placeholder)
 	var happiness = 0
-	
+
 	#var house_coefficient = 0.5
 	var citizen_coefficient = 0.03
 	var waste_coefficient = -0.7

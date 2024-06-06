@@ -1,5 +1,5 @@
 extends Control
-
+#removed unrelevant code, only what's relevant is there (copy it all)
 signal health_updated(value)
 signal gold_updated(count)
 signal house_updated(count)
