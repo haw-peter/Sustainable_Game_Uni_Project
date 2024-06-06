@@ -5,3 +5,4 @@ func apply_effects(player_stats: PlayerStats):
 	player_stats.citizens += self.inhabitants
 	player_stats.houses += 1
 	player_stats.waste_multiplier += 0.1
+	print("Card ID: 7")

@@ -1,5 +1,7 @@
 extends Panel
 
+signal time_changed(hours: int, minutes: int)
+
 var time: float = 0.0
 var hours: int = 12
 var minutes: int = 0
@@ -13,8 +15,6 @@ func _ready():
 	var interface_node = get_node("/root/Main/Camera2D/Interface")
 	if interface_node:
 		interface_node.connect("gold_count_changed", Callable(self, "_update_gold_label"))
-		# Emit the signal initially to update the UI label
-		#interface_node.emit_signal("gold_count_changed", interface_node.gold_count)
 
 func _process(delta) -> void:
 	time += delta
@@ -22,7 +22,9 @@ func _process(delta) -> void:
 	hours = fmod(time, 3600) / 60
 	$Hours.text = "%02d:" % hours
 	$Minutes.text = "%02d" % minutes
-	#
+	
+	#emit_signal("time_changed", hours, minutes)  # Emit signal whenever time changes
+
 	time_accumulator += delta
 	# Check if it's time to increment gold
 	if time_accumulator >= gold_increment_interval:
@@ -31,10 +33,8 @@ func _process(delta) -> void:
 		var interface_node = get_node("/root/Main/Camera2D/Interface")
 		if interface_node:
 			interface_node.gold_count += gold_increment_amount
-			#interface_node.emit_signal("gold_count_changed", interface_node.gold_count)
 
-#func _on_gold_count_changed(new_count: String) -> void:
-	#_update_gold_label(new_count)
+
 #
 func _update_gold_label(gold_count: String) -> void:
 	print("Updating gold label: ", gold_count)  # Debug print

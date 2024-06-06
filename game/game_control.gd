@@ -17,10 +17,13 @@ func _on_timer_timeout():
 	$Camera2D/Interface/Panel/Hours.text = "%02d :" % time.x
 	$Camera2D/Interface/Panel/Minutes.text = "%02d" % time.y
 	
+	#$Camera2D/Interface.emit_signal("times_changed", time.x, time.y)
+	
 	if (time.y % 10) == 0:
 		player_stats.change_capital(round(player_stats.citizens / 10))
 		player_stats.change_waste(calc_waste_incease())
 		player_stats.change_happiness(calc_happiness_increase())
+		#print("Timestamp: ", $Camera2D/Interface/Panel/Hours.text, $Camera2D/Interface/Panel/Minutes.text)
 
 func update_interface():
 	$Camera2D/Interface.emit_signal("gold_updated", player_stats.capital)

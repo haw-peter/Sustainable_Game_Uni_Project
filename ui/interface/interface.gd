@@ -7,8 +7,13 @@ signal citizen_updated(count)
 signal health_bar_changed(value)
 signal waste_bar_changed(value)
 
-func _ready():
 
+var time: float = 0.0
+var hours: int = 12
+var minutes: int = 0
+var timestamp = "%02d:%02d" % [hours, minutes]
+
+func _ready():
 	# Connect to the update signals
 	var interface_node = get_node(".")
 	interface_node.connect("gold_updated", Callable(self, "_update_gold_label"))
@@ -17,12 +22,23 @@ func _ready():
 	interface_node.connect("health_bar_changed", Callable(self, "_update_health_bar"))
 	interface_node.connect("waste_bar_changed", Callable(self, "_update_waste_bar"))
 
+	
+func _process(delta):
+	# Increment time
+	time += delta
+	minutes = fmod(time, 60) 
+	hours = fmod(time, 3600) / 60
+	# Update timestamp
+	hours += 12
+	timestamp = "%02d:%02d" % [hours, minutes]
 
-# Update functions for the UI elements
+
 func _update_gold_label(_gold_count):
+	print("Timestamp: ", timestamp)
 	print("Gold: ", _gold_count)  # Debug print
 	$Counters/GoldCounter/Number.text = str(_gold_count)
 	$Counters/GoldCounter/Number/AnimationPlayer.play("shake")
+
 
 func _update_house_label(house_count):
 	print("Building: ", house_count)  # Debug print
@@ -42,10 +58,8 @@ func _update_health_bar(_health_count):
 
 func _update_waste_bar(_waste_count):
 	print("Pollution: ", _waste_count)  # Debug print
-	#print("-----------------------------------------------------")
 	$Bars/WasteBar/Count/Number.text = str(_waste_count)
 	$Bars/WasteBar/TextureProgress.value = _waste_count
 	$Bars/WasteBar/TextureProgress/AnimationPlayer.play("shake")
-
 
 	

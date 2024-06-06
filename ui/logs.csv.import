@@ -6,10 +6,10 @@ uid="uid://dkjdrujgd0uc4"
 
 [deps]
 
-files=["res://ui/logs.Building.translation", "res://ui/logs.Population.translation", "res://ui/logs.Happiness.translation", "res://ui/logs.Pollution.translation"]
+files=["res://ui/logs.Gold.translation", "res://ui/logs.Building.translation", "res://ui/logs.Population.translation", "res://ui/logs.Happiness.translation", "res://ui/logs.Pollution.translation", "res://ui/logs.CardID.translation"]
 
 source_file="res://ui/logs.csv"
-dest_files=["res://ui/logs.Building.translation", "res://ui/logs.Population.translation", "res://ui/logs.Happiness.translation", "res://ui/logs.Pollution.translation"]
+dest_files=["res://ui/logs.Gold.translation", "res://ui/logs.Building.translation", "res://ui/logs.Population.translation", "res://ui/logs.Happiness.translation", "res://ui/logs.Pollution.translation", "res://ui/logs.CardID.translation"]
 
 [params]
 
