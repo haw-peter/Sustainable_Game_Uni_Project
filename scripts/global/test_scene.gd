@@ -9,7 +9,6 @@ extends Node2D
 
 func _ready():
 	turn_ui.player_stats = new_stats
-	
 	start_game(new_stats)
 
 func start_game(stats: PlayerStats):

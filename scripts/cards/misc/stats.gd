@@ -55,15 +55,15 @@ func change_happiness(amount: int):
 func change_citizens(amount: int):
 	self.citizens += amount
 
-func create_instance() -> Resource:
-	var instance: PlayerStats = self.duplicate()
-	instance.capital = 500
-	instance.waste = 0
-	instance.happiness = 50
-	instance.citizens = 0
-	instance.waste_multiplier = 1.0
-	instance.happiness_multiplier = 1.0
-	instance.deck = instance.starting_deck.duplicate()
-	instance.draw_pile = CardPile.new()
-	instance.discard_pile = CardPile.new()
-	return instance
+#func create_instance() -> Resource:
+	#var instance: PlayerStats = self.duplicate()
+	#instance.capital = 500
+	#instance.waste = 0
+	#instance.happiness = 50
+	#instance.citizens = 0
+	#instance.waste_multiplier = 1.0
+	#instance.happiness_multiplier = 1.0
+	#instance.deck = instance.starting_deck.duplicate()
+	#instance.draw_pile = CardPile.new()
+	#instance.discard_pile = CardPile.new()
+	#return instance

@@ -23,12 +23,13 @@ func _on_timer_timeout():
 		player_stats.change_waste(calc_waste_incease())
 
 func update_interface():
+	$Camera2D/Gui.emit_signal("ping_gold", player_stats.capital)
 	$Camera2D/Interface.emit_signal("gold_updated", player_stats.capital)
-	#$Camera2D/Interface.emit_signal("wood_updated", wood_count)
-	#$Camera2D/Interface.emit_signal("house_updated", house_count)
-	$Camera2D/Interface.emit_signal("citizen_updated", player_stats.citizens)
-	$Camera2D/Interface.emit_signal("health_bar_changed", player_stats.happiness)
-	$Camera2D/Interface.emit_signal("waste_bar_changed", player_stats.waste)
+	###$Camera2D/Interface.emit_signal("wood_updated", wood_count)
+	###$Camera2D/Interface.emit_signal("house_updated", house_count)
+	#$Camera2D/Interface.emit_signal("citizen_updated", player_stats.citizens)
+	#$Camera2D/Interface.emit_signal("health_bar_changed", player_stats.happiness)
+	#$Camera2D/Interface.emit_signal("waste_bar_changed", player_stats.waste)
 
 # waste multiplier is influenced by the type of building you place
 func calc_waste_incease() -> float:

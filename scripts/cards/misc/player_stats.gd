@@ -12,10 +12,11 @@ var draw_pile: CardPile
 func can_play_card(_card: Card) -> bool:
 	return false
 
-# creates a Deck we can add cards to without changing the original resource
+# creates a Deck we can add cards to without changing the original resource ?? Sure this is the same?
+
 func create_instance() -> Resource:
 	var instance: PlayerStats = self.duplicate()
-	instance.capital = 500
+	instance.capital = 437
 	instance.waste = 0
 	instance.happiness = 50
 	instance.citizens = 0

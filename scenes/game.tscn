@@ -14,7 +14,7 @@
 [node name="Main" type="Node"]
 script = ExtResource("1_ybfl2")
 
-[node name="Tilemap Main" parent="." instance=ExtResource("2_wfs6h")]
+[node name="TilemapMain" parent="." instance=ExtResource("2_wfs6h")]
 script = ExtResource("3_euatm")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -22,17 +22,17 @@ position = Vector2(576, 324)
 script = ExtResource("4_71376")
 EDGE_SCROLL = false
 
-[node name="Interface" parent="Camera2D" instance=ExtResource("5_m5lwb")]
-offset_left = -575.0
-offset_top = -324.0
-offset_right = 573.0
-offset_bottom = 321.0
-
 [node name="Gui" parent="Camera2D" instance=ExtResource("5_23lu3")]
 offset_left = -578.0
 offset_top = -323.0
 offset_right = 574.0
 offset_bottom = 326.0
+
+[node name="Interface" parent="Camera2D" instance=ExtResource("5_m5lwb")]
+offset_left = -575.0
+offset_top = -322.0
+offset_right = 579.0
+offset_bottom = 321.0
 
 [node name="Background_music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_jvfx1")
@@ -41,7 +41,7 @@ autoplay = true
 script = ExtResource("7_wvqdj")
 
 [node name="TestScene" parent="." instance=ExtResource("8_j58jo")]
-position = Vector2(20, 134)
+position = Vector2(-2, 130)
 player_stats = ExtResource("9_0rqmf")
 
 [node name="Timer" type="Timer" parent="."]

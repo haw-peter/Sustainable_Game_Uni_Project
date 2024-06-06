@@ -28,7 +28,6 @@ _data = {
 [node name="Counter" type="NinePatchRect"]
 
 [node name="Number" type="Label" parent="."]
-modulate = Color(0.68675, 0.0526538, 0.220711, 1)
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
