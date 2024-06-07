@@ -15,8 +15,8 @@ func _on_timer_timeout():
 	if time.y == 0:
 		time.x = (time.x + 1) % 24
 	
-	$Camera2D/Interface/Panel/Hours.text = "%02d :" % time.x
-	$Camera2D/Interface/Panel/Minutes.text = "%02d" % time.y
+	#$Camera2D/Interface/Panel/Hours.text = "%02d :" % time.x
+	#$Camera2D/Interface/Panel/Minutes.text = "%02d" % time.y
 	
 	if (time.y % 10) == 0:
 		player_stats.change_capital(round(player_stats.citizens / 10.0))
@@ -31,8 +31,6 @@ func update_interface():
 
 # waste multiplier is influenced by the type of building you place
 func calc_waste_incease() -> float:
-	print(player_stats.waste_multiplier)
-	print(player_stats.waste)
 	var waste_increase = (player_stats.citizens * player_stats.waste_multiplier)
 	return waste_increase
 
