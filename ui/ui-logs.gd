@@ -58,9 +58,14 @@ func export_log_to_csv(log_file_path: String, csv_file_path: String):
 	log_file.close()
 	
 	# Create a unique CSV file name based on timestamp
-	csv_file_path = csv_file_path.replace(".csv", "_" + unique_id + ".csv")
+	if not FileAccess.file_exists(csv_file_path):
+		FileAccess.open(csv_file_path, FileAccess.WRITE_READ)
+		csv_file_path = csv_file_path.replace(".csv", "_" + unique_id + ".csv")
+	else:
+		FileAccess.open(csv_file_path, FileAccess.WRITE_READ)	
 	
 	var csv_file = FileAccess.open(csv_file_path, FileAccess.WRITE)
+	
 	if not csv_file:
 		print("Failed to create CSV file:", csv_file_path)
 		return

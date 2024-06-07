@@ -23,7 +23,7 @@ func start_game(stats: PlayerStats):
 # here should be the turn mechanics and the end condition
 
 func _check_waste_level(): #new
-	if new_stats.waste >= 100: # reset it back to 100
+	if new_stats.waste >= 1: # reset it back to 100
 		end_game()
 		script_instance.export_log_to_csv("user://logs/godot.log", "res://ui/logs.csv")
 			
