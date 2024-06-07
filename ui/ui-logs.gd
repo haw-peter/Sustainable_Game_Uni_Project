@@ -56,14 +56,15 @@ func export_log_to_csv(log_file_path: String, csv_file_path: String):
 				csv_content += "\n"
 	
 	log_file.close()
-	
+	#--------------------- What's new --------------------------#
 	# Create a unique CSV file name based on timestamp
 	if not FileAccess.file_exists(csv_file_path):
 		FileAccess.open(csv_file_path, FileAccess.WRITE_READ)
 		csv_file_path = csv_file_path.replace(".csv", "_" + unique_id + ".csv")
 	else:
 		FileAccess.open(csv_file_path, FileAccess.WRITE_READ)	
-	
+	# Please remove these comments once you add the file #	
+	#------------------------------------------------------------#
 	var csv_file = FileAccess.open(csv_file_path, FileAccess.WRITE)
 	
 	if not csv_file:
