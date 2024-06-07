@@ -24,4 +24,5 @@ func on_input(event: InputEvent):
 	elif event.is_action_pressed("leftMouse") or event.is_action_released("leftMouse"):
 		get_viewport().set_input_as_handled()
 		Events.place_tile.emit(card_ui.card)
+
 	

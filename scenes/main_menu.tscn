@@ -1,5 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://xymfrv6sswn2"]
-
+[gd_scene load_steps=5 format=3 uid="uid://dqauaae4k72f"]
 [ext_resource type="Script" path="res://scripts/global/main_menu.gd" id="1_7n5sv"]
 [ext_resource type="Texture2D" uid="uid://dr3p4edyj2new" path="res://assets/graphics/background/Green-Hexagon-Polygon-Background-Graphics-4189000-1.jpg" id="2_i6ev0"]
 [ext_resource type="AudioStream" uid="uid://ckiotlu1wlj12" path="res://assets/audio/mixkit-correct-answer-notification-947.wav" id="3_bjofs"]
