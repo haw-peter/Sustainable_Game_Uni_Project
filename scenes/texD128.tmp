@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b3d25jlg8yjay"]
+[gd_scene load_steps=3 format=3 uid="uid://b3d25jlg8yjay"]
 
 [ext_resource type="Script" path="res://scripts/global/textbox.gd" id="1_ghfp8"]
 [ext_resource type="Texture2D" uid="uid://cboqpww51h5lt" path="res://assets/graphics/ui/textbox.png" id="2_mdghp"]
-[ext_resource type="FontFile" uid="uid://c32so8w4n3r7f" path="res://assets/fonts/pixelfont.ttf" id="3_t4fs4"]
 
 [node name="TextBox" type="MarginContainer"]
 anchors_preset = -1
@@ -31,11 +30,6 @@ theme_override_constants/margin_bottom = 8
 [node name="Label" type="RichTextLabel" parent="MarginContainer"]
 texture_filter = 1
 layout_mode = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("3_t4fs4")
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
 
 [node name="LetterDisplayTimer" type="Timer" parent="."]
 one_shot = true

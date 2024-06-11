@@ -8,9 +8,9 @@ const MAX_WIDTH = 256
 var text = ""
 var letter_index = 0
 
-var letter_time = 0.05
-var space_time = 0.1
-var punctuation_time = 0.2
+var letter_time = 0.025
+var space_time = 0.05
+var punctuation_time = 0.1
 
 signal finished_displaying()
 

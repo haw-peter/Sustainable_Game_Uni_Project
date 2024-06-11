@@ -19,7 +19,7 @@ func _ready():
 	if NotificationManager.notification_parent != null :
 		_show_notification_box()
 	else:
-		NotificationManager.connect("notification_parent_set", Callable(self, "_show_notification_box")) #issue
+		NotificationManager.connect("notification_parent_set", Callable(self, "_show_notification_box")) 
 
 func start_notification(line: String):
 	notification_line = line
