@@ -35,6 +35,16 @@ func draw_cards(amount: int):
 	
 	tween.finished.connect(func(): Events.player_hand_drawn.emit())
 
+func discard_hand() -> void:
+	for n in range(0, hand.get_child_count()):
+		discard_card(n)
+	
+	start_turn()
+
+func discard_card(index: int):
+	player.discard_pile.add_card(hand.get_child(index).card)
+	hand.get_child(index).queue_free()
+
 func check_hand_empty(card: Card) -> void:
 	# If (currently) draw from Deck, then dont fill hand
 	if(card.type == card.Type.DECKS):

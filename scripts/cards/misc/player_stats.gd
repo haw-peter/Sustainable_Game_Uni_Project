@@ -15,8 +15,8 @@ func can_play_card(_card: Card) -> bool:
 # creates a Deck we can add cards to without changing the original resource
 func create_instance() -> Resource:
 	var instance: PlayerStats = self.duplicate()
-	instance.capital = 500
-	instance.waste = 0
+	instance.capital = 100
+	instance.waste = 10
 	instance.happiness = 50
 	instance.citizens = 0
 	instance.waste_multiplier = 0.01

@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://jhtkraqldyme"]
+
+[ext_resource type="Script" path="res://scripts/global/test_scene.gd" id="1_e00ii"]
+[ext_resource type="Script" path="res://scripts/player/player_handler.gd" id="1_sokf2"]
+[ext_resource type="Script" path="res://scripts/player/turn_ui.gd" id="3_x3k76"]
+[ext_resource type="Script" path="res://scripts/cards/misc/hand.gd" id="4_lji6h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0b0rn"]
+size = Vector2(1152, 466)
+
+[node name="TestScene" type="Node2D"]
+script = ExtResource("1_e00ii")
+
+[node name="CardDropArea" type="Area2D" parent="."]
+position = Vector2(-1, 0)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CardDropArea"]
+position = Vector2(577, 234)
+shape = SubResource("RectangleShape2D_0b0rn")
+
+[node name="PlayerHandler" type="Node" parent="." node_paths=PackedStringArray("hand")]
+script = ExtResource("1_sokf2")
+hand = NodePath("../TurnUI/Hand")
+
+[node name="TurnUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
+script = ExtResource("3_x3k76")
+
+[node name="Hand" type="HBoxContainer" parent="TurnUI"]
+custom_minimum_size = Vector2(100, 150)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -150.0
+offset_right = 300.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 4
+alignment = 1
+script = ExtResource("4_lji6h")
+
+[node name="Button" type="Button" parent="TurnUI"]
+visible = false
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -197.0
+offset_top = -52.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[connection signal="pressed" from="TurnUI/Button" to="." method="_on_button_pressed"]

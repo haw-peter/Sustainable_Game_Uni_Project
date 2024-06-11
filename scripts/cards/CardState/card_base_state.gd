@@ -9,9 +9,8 @@ func enter():
 		card_ui.tween.kill()
 	card_ui.reparent_requested.emit(card_ui)
 
-
 func on_gui_input(event: InputEvent):
-	if event.is_action_pressed("leftMouse"):
+	if event.is_action_pressed("leftMouse") && card_ui.playable:
 		card_ui.pivot_offset = card_ui.get_global_mouse_position() - card_ui.global_position
 		transition_requested.emit(self, CardState.State.CLICKED)
 

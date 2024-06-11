@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://d04n1w522gmtp"]
+
+[ext_resource type="Script" path="res://scripts/cards/Building/recycle.gd" id="1_0t2o1"]
+[ext_resource type="Texture2D" uid="uid://re4io48ienli" path="res://assets/graphics/hexTiles/PNG/Tiles/Modern/modern_cornerShop.png" id="1_jqgjg"]
+
+[resource]
+script = ExtResource("1_0t2o1")
+id = "Recycling Station"
+type = 0
+tile_id = 3
+pic = ExtResource("1_jqgjg")
+description = "Decreases Waste"
+color = Color(1, 1, 1, 1)
+layer = 1
+cost = 40
+inhabitants = 0

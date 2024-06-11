@@ -11,7 +11,6 @@ func _ready():
 	Events.player_hand_drawn.connect(_on_hand_drawn)
 	Events.draw_cards.connect(_on_draw_cards)
 
-
 func _on_card_ui_reparent_requested(child: CardUI):
 	child.reparent(self)
 	var new_index := clampi(child.original_index - cards_played, 0, get_child_count())

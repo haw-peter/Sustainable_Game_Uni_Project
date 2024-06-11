@@ -11,5 +11,6 @@ tile_id = 5
 pic = ExtResource("1_hspnf")
 description = "Place 1 Eco - House"
 color = Color(3.17663e-06, 0.769305, 0.253667, 1)
+layer = 1
 cost = 10
 inhabitants = 3

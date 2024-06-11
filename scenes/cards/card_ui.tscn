@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://b3lyijp0w2ux8"]
+[gd_scene load_steps=14 format=3 uid="uid://b3lyijp0w2ux8"]
 
 [ext_resource type="Script" path="res://scripts/cards/misc/card_ui.gd" id="1_wllp1"]
 [ext_resource type="Script" path="res://scripts/cards/misc/card_state_mashine.gd" id="2_r7yju"]
+[ext_resource type="FontFile" uid="uid://c32so8w4n3r7f" path="res://assets/fonts/pixelfont.ttf" id="2_vm4oh"]
 [ext_resource type="Script" path="res://scripts/cards/CardState/card_base_state.gd" id="3_hahib"]
 [ext_resource type="Script" path="res://scripts/cards/CardState/card_clicked_state.gd" id="4_t0egn"]
 [ext_resource type="Script" path="res://scripts/cards/CardState/card_dragging_state.gd" id="5_7qjyg"]
@@ -22,6 +23,12 @@ line_spacing = 1.0
 font = SubResource("FontVariation_xk2wf")
 font_size = 12
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bkjiy"]
+font = ExtResource("2_vm4oh")
+font_size = 18
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_newti"]
 size = Vector2(100, 150)
@@ -94,6 +101,15 @@ label_settings = SubResource("LabelSettings_1w1ld")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="Cost" type="Label" parent="."]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 130.0
+offset_right = 95.0
+offset_bottom = 149.0
+label_settings = SubResource("LabelSettings_bkjiy")
+horizontal_alignment = 2
 
 [node name="DropPointDetector" type="Area2D" parent="."]
 collision_mask = 2

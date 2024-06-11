@@ -4,12 +4,13 @@ extends Control
 signal reparent_requested(card_ui: CardUI)
 
 @export var card: Card : set = _set_card
-@export var player_stats: PlayerStats
+@export var player_stats: PlayerStats : set = _set_player_stats
 
 @onready var color: ColorRect = $Color
 @onready var label: Label = $Label
 @onready var picture: TextureRect = $Picture
 @onready var description: Label = $Description
+@onready var cost: Label = $Cost
 
 @onready var card_state_mashine: CardStateMashine = $CardStateMashine as CardStateMashine
 @onready var drop_point_detector = $DropPointDetector
@@ -18,6 +19,8 @@ signal reparent_requested(card_ui: CardUI)
 
 var parent: Control
 var tween: Tween
+
+var playable : bool = true 
 
 func _ready():
 	card_state_mashine.init(self)
@@ -45,6 +48,23 @@ func on_mouse_entered():
 func on_mouse_exited():
 	card_state_mashine.on_mouse_exited()
 
+func _set_playable() -> void:
+	if card.cost <= player_stats.capital:
+		playable = true
+		cost.modulate = Color(1, 1, 1, 1)
+		picture.modulate = Color(1, 1 ,1 , 1)
+		
+	else:
+		playable = false
+		cost.modulate = Color(1, 0, 0, 1)
+		picture.modulate = Color(1, 1 , 1 , 0.5)
+
+func _set_player_stats(value: PlayerStats):
+	player_stats = value
+	player_stats.resources_changed.connect(_set_playable)
+	_set_playable()
+	
+
 func _set_card(value: Card):
 	if not is_node_ready():
 		await ready
@@ -54,6 +74,7 @@ func _set_card(value: Card):
 	label.text = card.id
 	picture.texture = card.pic
 	description.text = card.description
+	cost.text = str(card.cost)
 
 func _on_drop_point_detector_area_entered(area: Area2D):
 	if not targets.has(area):

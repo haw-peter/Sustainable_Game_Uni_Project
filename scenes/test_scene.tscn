@@ -1,15 +1,38 @@
-[gd_scene load_steps=6 format=3 uid="uid://jhtkraqldyme"]
+[gd_scene load_steps=9 format=3 uid="uid://jhtkraqldyme"]
 
-[ext_resource type="Script" path="res://scripts/global/test_scene.gd" id="1_e00ii"]
-[ext_resource type="Script" path="res://scripts/player/player_handler.gd" id="1_sokf2"]
-[ext_resource type="Script" path="res://scripts/player/turn_ui.gd" id="3_x3k76"]
-[ext_resource type="Script" path="res://scripts/cards/misc/hand.gd" id="4_lji6h"]
+[ext_resource type="Script" path="res://scripts/global/test_scene.gd" id="1_76npj"]
+[ext_resource type="Resource" uid="uid://bfhwlttphtmto" path="res://ressources/player/player_stats.tres" id="2_lox03"]
+[ext_resource type="Script" path="res://scripts/player/turn_ui.gd" id="3_kvhej"]
+[ext_resource type="Script" path="res://scripts/player/player_handler.gd" id="3_ytgm1"]
+[ext_resource type="Script" path="res://scripts/cards/misc/hand.gd" id="4_2u37l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0b0rn"]
 size = Vector2(1152, 466)
 
+[sub_resource type="Animation" id="Animation_r4tl3"]
+resource_name = "button_shake"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(955, 596), Vector2(945, 596), Vector2(955, 596), Vector2(945, 596), Vector2(950, 596)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rjx23"]
+_data = {
+"button_shake": SubResource("Animation_r4tl3")
+}
+
 [node name="TestScene" type="Node2D"]
-script = ExtResource("1_e00ii")
+script = ExtResource("1_76npj")
+player_stats = ExtResource("2_lox03")
 
 [node name="CardDropArea" type="Area2D" parent="."]
 position = Vector2(-1, 0)
@@ -20,11 +43,17 @@ position = Vector2(577, 234)
 shape = SubResource("RectangleShape2D_0b0rn")
 
 [node name="PlayerHandler" type="Node" parent="." node_paths=PackedStringArray("hand")]
-script = ExtResource("1_sokf2")
+script = ExtResource("3_ytgm1")
 hand = NodePath("../TurnUI/Hand")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerHandler"]
+root_node = NodePath("../../TurnUI/Button")
+libraries = {
+"": SubResource("AnimationLibrary_rjx23")
+}
+
 [node name="TurnUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
-script = ExtResource("3_x3k76")
+script = ExtResource("3_kvhej")
 
 [node name="Hand" type="HBoxContainer" parent="TurnUI"]
 custom_minimum_size = Vector2(100, 150)
@@ -40,17 +69,18 @@ grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 4
 alignment = 1
-script = ExtResource("4_lji6h")
+script = ExtResource("4_2u37l")
+player_stats = ExtResource("2_lox03")
 
 [node name="Button" type="Button" parent="TurnUI"]
-visible = false
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -197.0
+offset_left = -202.0
 offset_top = -52.0
+offset_right = -5.0
 grow_horizontal = 0
 grow_vertical = 0
 
