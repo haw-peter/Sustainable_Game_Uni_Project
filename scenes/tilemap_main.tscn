@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://8perof1x4lj2"]
+[gd_scene load_steps=34 format=3 uid="uid://8perof1x4lj2"]
 
 [ext_resource type="Texture2D" uid="uid://b1oy0hyyb1ik6" path="res://assets/graphics/hexTiles/Spritesheets/hexagonTerrain_sheet.png" id="1_yiaw3"]
 [ext_resource type="Texture2D" uid="uid://dsfyuxo6kkv6w" path="res://assets/graphics/hexTiles/Spritesheets/hexagonBuildings_sheet.png" id="2_cpk4c"]
