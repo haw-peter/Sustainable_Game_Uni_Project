@@ -25,8 +25,7 @@ func _ready():
 func _process(_delta):
 	if aiming:
 		$TileMap.clear_layer(2)
-		#$TileMap.set_cell(2, $TileMap.local_to_map(get_global_mouse_position()), 1, tile_dic[selected_item],0)
-		$TileMap.set_cell(2, $TileMap.local_to_map(get_global_mouse_position()), selected_tile, Vector2i.ZERO, 0) 
+		$TileMap.set_cell(2, $TileMap.local_to_map(get_global_mouse_position()), 16, Vector2i.ZERO, 0) 
 
 
 static func get_all_tile_coords(tile_source: TileSetSource) -> Array[Vector2i]:	
@@ -51,18 +50,21 @@ func hide_cursor():
 	tilemap.set_layer_enabled(2, !true)
 
 func place_tile(card: Card):
-	if(card.layer == 0 && is_neighbor_tiles()):
-		$TileMap.set_cell(0, $TileMap.local_to_map(get_global_mouse_position()), selected_tile, Vector2i.ZERO, 0)
+	var mouse_pos = get_global_mouse_position()
+	# Condition for expanding map, can only place when there are Tiles adjecent
+	if(card.layer == 0 && is_neighbor_tiles(mouse_pos)):
+		$TileMap.set_cell(0, $TileMap.local_to_map(mouse_pos), selected_tile, Vector2i.ZERO, 0)
 		Events.tile_placed.emit()
 		return
-	if($TileMap.get_cell_source_id(0,$TileMap.local_to_map(get_global_mouse_position())) == -1):
+	# Check if there is a vaiable space
+	if($TileMap.get_cell_source_id(0,$TileMap.local_to_map(mouse_pos)) == -1 || $TileMap.get_cell_source_id(1,$TileMap.local_to_map(mouse_pos)) != -1):
 		return
 	else:
-		$TileMap.set_cell(1, $TileMap.local_to_map(get_global_mouse_position()), selected_tile, Vector2i.ZERO, 0)
+		$TileMap.set_cell(1, $TileMap.local_to_map(mouse_pos), selected_tile, Vector2i.ZERO, 0)
 		Events.tile_placed.emit()
 		
-func is_neighbor_tiles()-> bool:
-	var neighbors = $TileMap.get_surrounding_cells($TileMap.local_to_map(get_global_mouse_position()))
+func is_neighbor_tiles(mouse_pos)-> bool:
+	var neighbors = $TileMap.get_surrounding_cells($TileMap.local_to_map(mouse_pos))
 	for n in range (0, neighbors.size()):
 		if($TileMap.get_cell_source_id(0, neighbors[n]) != -1):
 			return true

@@ -28,6 +28,7 @@ offset_right = 573.0
 offset_bottom = 321.0
 
 [node name="Gui" parent="Camera2D" instance=ExtResource("5_23lu3")]
+visible = false
 offset_left = -578.0
 offset_top = -323.0
 offset_right = 574.0
