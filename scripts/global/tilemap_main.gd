@@ -52,14 +52,14 @@ func hide_cursor():
 func place_tile(card: Card):
 	var mouse_pos = get_global_mouse_position()
 	# Condition for expanding map, can only place when there are Tiles adjecent
-	if(card.layer == 0 && is_neighbor_tiles(mouse_pos)):
+	if(card.layer == 0 && is_neighbor_tiles(mouse_pos) && $TileMap.get_cell_source_id(0,$TileMap.local_to_map(mouse_pos)) == -1):
 		$TileMap.set_cell(0, $TileMap.local_to_map(mouse_pos), selected_tile, Vector2i.ZERO, 0)
 		Events.tile_placed.emit()
 		return
 	# Check if there is a vaiable space
 	if($TileMap.get_cell_source_id(0,$TileMap.local_to_map(mouse_pos)) == -1 || $TileMap.get_cell_source_id(1,$TileMap.local_to_map(mouse_pos)) != -1):
 		return
-	else:
+	elif(card.layer == 1):
 		$TileMap.set_cell(1, $TileMap.local_to_map(mouse_pos), selected_tile, Vector2i.ZERO, 0)
 		Events.tile_placed.emit()
 		
