@@ -17,6 +17,7 @@ func create_instance() -> Resource:
 	var instance: PlayerStats = self.duplicate()
 	instance.capital = 100
 	instance.waste = 10
+	instance.houses = 0
 	instance.happiness = 50
 	instance.citizens = 0
 	instance.waste_multiplier = 0.01
