@@ -32,3 +32,5 @@ func _on_hand_drawn():
 
 func _on_draw_cards(amount: int):
 	cards_played += amount
+	print("Cards Drawn: ", true)
+

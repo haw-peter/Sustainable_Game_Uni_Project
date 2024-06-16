@@ -2,6 +2,7 @@ class_name CardUI
 extends Control
 
 signal reparent_requested(card_ui: CardUI)
+signal card_set(card_id: CardUI)
 
 @export var card: Card : set = _set_card
 @export var player_stats: PlayerStats : set = _set_player_stats
@@ -68,13 +69,13 @@ func _set_player_stats(value: PlayerStats):
 func _set_card(value: Card):
 	if not is_node_ready():
 		await ready
-	
 	card = value
 	color.color = card.color
 	label.text = card.id
 	picture.texture = card.pic
 	description.text = card.description
 	cost.text = str(card.cost)
+	
 
 func _on_drop_point_detector_area_entered(area: Area2D):
 	if not targets.has(area):

@@ -25,6 +25,7 @@ func draw_card():
 			for c in player.discard_pile.cards.size():
 				player.draw_pile.add_card(player.discard_pile.draw_card())
 			player.draw_pile.shuffle()
+	print("Inventory: ", player.draw_pile.cards[0].id)		
 	hand.add_card(player.draw_pile.draw_card())
 
 func draw_cards(amount: int):
