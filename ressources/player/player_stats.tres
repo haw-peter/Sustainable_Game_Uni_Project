@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_t88fe")
 starting_deck = ExtResource("2_hbsvr")
-cards_per_turn = 3
+cards_per_turn = 7
 innit_capital = 500
 innit_capital_gain = 0
 innit_waste = 10.0

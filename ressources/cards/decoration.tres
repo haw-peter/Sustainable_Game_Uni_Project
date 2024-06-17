@@ -1,0 +1,19 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dmrcc74m6mckb"]
+
+[ext_resource type="Texture2D" uid="uid://b05ka3qaothey" path="res://assets/graphics/hexTiles/PNG/Objects/archway.png" id="1_2l4lg"]
+[ext_resource type="Script" path="res://scripts/cards/Building/decoration.gd" id="1_27bhc"]
+
+[resource]
+script = ExtResource("1_27bhc")
+id = "Decoration"
+type = 0
+tile_id = 17
+pic = ExtResource("1_2l4lg")
+description = "Increases Happiness"
+color = Color(1, 0.431551, 0.880477, 1)
+layer = 1
+cost = 75
+inhabitants = 0
+capital_gain = 0
+waste_gain = 0.0
+happiness_gain = 0.5

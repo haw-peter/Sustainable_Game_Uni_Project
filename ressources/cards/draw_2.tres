@@ -14,3 +14,6 @@ color = Color(0, 0.583089, 0.962409, 1)
 layer = 1
 cost = 0
 inhabitants = 0
+capital_gain = 0
+waste_gain = 0.0
+happiness_gain = 0.0
