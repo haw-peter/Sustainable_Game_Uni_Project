@@ -59,7 +59,7 @@ func export_log_to_csv(log_file_path: String, csv_file_path: String):
 			elif line.begins_with("Inventory:"):
 				for key in inventory_cards.keys():
 					if line.find(key) != -1:
-						inventory_cards[key] = 1
+						inventory_cards[key] += 1
 			elif line.begins_with("Cards Drawn:"):
 				card_drawn = "true"
 			elif line.begins_with("Cards Discarded:"):
