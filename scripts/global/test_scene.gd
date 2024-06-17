@@ -13,7 +13,7 @@ var script_instance = preload("res://scripts/global/ui-logs.gd").new()
 
 func _ready():
 	turn_ui.player_stats = new_stats
-	$TurnUI/Button.text = "Discard Hand for: " + str(discard_cost)
+	$TurnUI/Button.text = "Discard\nfor: " + str(discard_cost)
 	
 	start_game(new_stats)
 	new_stats.resources_changed.connect(_check_waste_level)
@@ -60,8 +60,7 @@ func generate_unique_id(): #new
 							
 	print("Unique ID: ", unique_id)
 
-		
-		
+
 func _on_button_pressed():
 	if new_stats.capital >= discard_cost:
 		$TurnUI/Button.disabled = true

@@ -8,6 +8,10 @@ signal health_bar_changed(value)
 signal waste_bar_changed(value)
 
 
+@export var happy_pic : Texture
+@export var meh_pic : Texture
+@export var sad_pic : Texture
+
 func _ready():
 	# Connect to the update signals
 	var interface_node = get_node(".")
@@ -25,11 +29,9 @@ func _update_gold_label(_gold_count):
 	$Counters/GoldCounter/Number.text = str(_gold_count)
 	$Counters/GoldCounter/Number/AnimationPlayer.play("shake")
 
-
 func _update_house_label(house_count):
+	#for logging only
 	print("Building: ", house_count)  
-	$Counters/HouseCounter/Number.text = str(house_count)
-	$Counters/HouseCounter/Number/AnimationPlayer.play("shake")
 
 func _update_citizen_label(_citizen_count):
 	print("Population: ", _citizen_count)  
@@ -40,6 +42,14 @@ func _update_health_bar(_health_count):
 	print("Happiness: ", _health_count)  
 	$Bars/LifeBar/Count/Number.text = str(_health_count)
 	$Bars/LifeBar/TextureProgress.value = _health_count
+	# update the Picture
+	if _health_count >= 75:
+		$Bars/LifeBar/Count/Title.texture = happy_pic
+	elif _health_count >= 50:
+		$Bars/LifeBar/Count/Title.texture = meh_pic
+	elif _health_count <= 25:
+		$Bars/LifeBar/Count/Title.texture = sad_pic
+	
 	$Bars/LifeBar/TextureProgress/AnimationPlayer.play("shake")
 
 func _update_waste_bar(_waste_count):
@@ -48,4 +58,3 @@ func _update_waste_bar(_waste_count):
 	$Bars/WasteBar/TextureProgress.value = _waste_count
 	$Bars/WasteBar/TextureProgress/AnimationPlayer.play("shake")
 
-	

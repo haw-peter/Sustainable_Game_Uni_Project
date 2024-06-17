@@ -2,12 +2,7 @@ extends Node2D
 
 signal tile_placed(amount)
 
-var start_size = 20
-var dic = {}
 var last_indicator = Vector2i(0,0)
-var tile_dic = get_all_tile_coords($TileMap.get_tileset().get_source(1))
-
-var selected_item = 1
 var selected_tile: int
 @onready var tilemap = $TileMap
 

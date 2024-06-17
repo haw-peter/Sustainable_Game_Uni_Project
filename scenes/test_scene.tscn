@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://jhtkraqldyme"]
+[gd_scene load_steps=10 format=3 uid="uid://jhtkraqldyme"]
 
 [ext_resource type="Script" path="res://scripts/global/test_scene.gd" id="1_76npj"]
 [ext_resource type="Resource" uid="uid://bfhwlttphtmto" path="res://ressources/player/player_stats.tres" id="2_lox03"]
 [ext_resource type="Script" path="res://scripts/player/turn_ui.gd" id="3_kvhej"]
 [ext_resource type="Script" path="res://scripts/player/player_handler.gd" id="3_ytgm1"]
 [ext_resource type="Script" path="res://scripts/cards/misc/hand.gd" id="4_2u37l"]
+[ext_resource type="Texture2D" uid="uid://mw7ydaeioqig" path="res://assets/graphics/cards/discard.png" id="6_7fka5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0b0rn"]
 size = Vector2(1152, 466)
@@ -78,10 +79,15 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -202.0
-offset_top = -52.0
+offset_left = -142.0
+offset_top = -72.0
 offset_right = -5.0
 grow_horizontal = 0
 grow_vertical = 0
+icon = ExtResource("6_7fka5")
+alignment = 0
+text_overrun_behavior = 2
+clip_text = true
+icon_alignment = 2
 
 [connection signal="pressed" from="TurnUI/Button" to="." method="_on_button_pressed"]

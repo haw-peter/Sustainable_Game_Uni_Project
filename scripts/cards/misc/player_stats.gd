@@ -4,6 +4,11 @@ extends Stats
 @export var starting_deck: CardPile
 @export var cards_per_turn: int # defines amount of cards drawn in per turn
 
+@export var innit_capital : int
+@export var innit_capital_gain : int
+@export var innit_waste : float
+@export var innit_happiness : float
+
 var deck: CardPile
 var discard_pile: CardPile
 var draw_pile: CardPile
@@ -13,15 +18,17 @@ func can_play_card(_card: Card) -> bool:
 	return false
 
 # creates a Deck we can add cards to without changing the original resource
+# initial values for resources here
 func create_instance() -> Resource:
 	var instance: PlayerStats = self.duplicate()
-	instance.capital = 100
-	instance.waste = 10
+	instance.capital = innit_capital
+	instance.waste = innit_waste
 	instance.houses = 0
-	instance.happiness = 50
+	instance.happiness = innit_happiness
 	instance.citizens = 0
-	instance.waste_multiplier = 0.01
-	instance.happiness_multiplier = 1.0
+	instance.waste_multiplier = 0.0
+	instance.happiness_multiplier = 0.0
+	instance.capital_gain = innit_capital_gain
 	instance.deck = instance.starting_deck.duplicate()
 	instance.draw_pile = CardPile.new()
 	instance.discard_pile = CardPile.new()
