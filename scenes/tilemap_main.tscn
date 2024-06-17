@@ -1,5 +1,6 @@
-[gd_scene load_steps=36 format=3 uid="uid://8perof1x4lj2"]
+[gd_scene load_steps=37 format=3 uid="uid://8perof1x4lj2"]
 
+[ext_resource type="Script" path="res://scripts/global/tilemap_main.gd" id="1_qg2by"]
 [ext_resource type="Texture2D" uid="uid://b1oy0hyyb1ik6" path="res://assets/graphics/hexTiles/Spritesheets/hexagonTerrain_sheet.png" id="1_yiaw3"]
 [ext_resource type="Texture2D" uid="uid://dsfyuxo6kkv6w" path="res://assets/graphics/hexTiles/Spritesheets/hexagonBuildings_sheet.png" id="2_cpk4c"]
 [ext_resource type="Texture2D" uid="uid://2k0s83yomc5f" path="res://assets/graphics/hexTiles/PNG/Tiles/Modern/modern_skyscraper.png" id="3_7ajh8"]
@@ -263,7 +264,7 @@ texture_region_size = Vector2i(120, 140)
 
 [sub_resource type="TileSet" id="TileSet_w13cx"]
 tile_shape = 3
-tile_size = Vector2i(120, 140)
+tile_size = Vector2i(118, 138)
 sources/0 = SubResource("TileSetAtlasSource_m7ahw")
 sources/1 = SubResource("TileSetAtlasSource_tn7ox")
 sources/2 = SubResource("TileSetAtlasSource_tnk78")
@@ -283,12 +284,13 @@ sources/15 = SubResource("TileSetAtlasSource_dxboa")
 sources/16 = SubResource("TileSetAtlasSource_mjq87")
 
 [node name="Tilemap Main" type="Node2D"]
+script = ExtResource("1_qg2by")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_w13cx")
 format = 2
 layer_0/name = "Base"
-layer_0/tile_data = PackedInt32Array(65536, 327680, 1, 65537, 327680, 1, 131073, 327680, 1, 131072, 327680, 1, 131074, 327680, 1, 196609, 327680, 1, 196608, 327680, 1, 262145, 262144, 10, 262146, 262144, 8, 196610, 327680, 1, 262144, 327680, 1, 262143, 327680, 1, 131075, 327680, 1, 65538, 327680, 1, 65539, 327680, 1, 196611, 327680, 1, 196612, 327680, 1, 262148, 327680, 1, 327684, 327680, 1, 327683, 327680, 1, 131077, 327680, 1, 262147, 262144, 1, 131076, 262144, 1, 327682, 262144, 8, 327681, 262144, 8)
+layer_0/tile_data = PackedInt32Array(65542, 15, 0, 131078, 15, 0, 196614, 15, 0, 262150, 15, 0, 327686, 15, 0, 65543, 15, 0, 131079, 15, 0, 196615, 15, 0, 262151, 15, 0, 327687, 15, 0, 131080, 15, 0, 262152, 15, 0, 196613, 15, 0, 262149, 15, 0, 327685, 15, 0, 131077, 15, 0, 65541, 15, 0, 196612, 15, 0, 196616, 15, 0)
 layer_1/name = "Buildings"
 layer_1/tile_data = PackedInt32Array()
 layer_2/name = "Cursor"

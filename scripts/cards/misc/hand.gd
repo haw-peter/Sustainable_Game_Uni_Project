@@ -24,8 +24,13 @@ func add_card(card: Card):
 	new_card_ui.parent = self
 	new_card_ui.player_stats = player_stats
 
-func _on_card_played(_card: Card):
-	cards_played += 1
+func _on_card_played(card: Card):
+	
+	if card.id == "Draw 2":
+		cards_played += 2
+		return
+	else:
+		cards_played += 1
 
 func _on_hand_drawn():
 	cards_played = 0

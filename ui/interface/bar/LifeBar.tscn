@@ -1,52 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bdgu0cicu0erv"]
+[gd_scene load_steps=9 format=3 uid="uid://bdgu0cicu0erv"]
 
 [ext_resource type="Script" path="res://ui/interface/bar/bar.gd" id="1_qrhll"]
 [ext_resource type="Texture2D" uid="uid://cj7rncm1era2i" path="res://ui/interface/bar/meh.png" id="2_1kom4"]
 [ext_resource type="Script" path="res://ui/interface/bar/texture_progress.gd" id="2_04in3"]
 [ext_resource type="Texture2D" uid="uid://beglwxurlxpub" path="res://ui/interface/bar/bg.png" id="3_6yor1"]
 [ext_resource type="Texture2D" uid="uid://dsiyij2u5x7px" path="res://ui/interface/bar/fill.png" id="4_vrjv1"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_vkirf"]
-
-[sub_resource type="Animation" id="2"]
-resource_name = "SETUP"
-length = 0.01
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Count/Number:rect_position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(43, 6)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Count/Number:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Count/Title:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
 
 [sub_resource type="Animation" id="1"]
 resource_name = "shake"
@@ -78,57 +36,22 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vq42b"]
 _data = {
-"SETUP": SubResource("2"),
 "shake": SubResource("1")
 }
+
+[sub_resource type="LabelSettings" id="LabelSettings_vkirf"]
 
 [node name="LifeBar" type="HBoxContainer"]
 anchors_preset = -1
 anchor_bottom = 0.002
-offset_top = 1.0
-offset_right = 471.0
-offset_bottom = 52.704
+offset_right = 400.0
+offset_bottom = 51.704
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_qrhll")
-
-[node name="Count" type="NinePatchRect" parent="."]
-layout_mode = 2
-
-[node name="Title" type="TextureRect" parent="Count"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 401.0
-offset_top = -27.5
-offset_right = 468.0
-offset_bottom = 38.5
-grow_vertical = 2
-texture = ExtResource("2_1kom4")
-stretch_mode = 4
-
-[node name="Number" type="Label" parent="Count"]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 379.0
-offset_top = 30.5
-offset_right = 423.0
-offset_bottom = 49.5
-grow_horizontal = 0
-grow_vertical = 2
-text = "50"
-label_settings = SubResource("LabelSettings_vkirf")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Count"]
-libraries = {
-"": SubResource("AnimationLibrary_vq42b")
-}
 
 [node name="TextureProgress" type="TextureProgressBar" parent="."]
 layout_mode = 2
+size_flags_horizontal = 0
 value = 50.0
 texture_under = ExtResource("3_6yor1")
 texture_progress = ExtResource("4_vrjv1")
@@ -139,3 +62,19 @@ root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_vq42b")
 }
+
+[node name="Count" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Number" type="Label" parent="Count"]
+layout_mode = 2
+text = "50"
+label_settings = SubResource("LabelSettings_vkirf")
+
+[node name="Title" type="TextureRect" parent="Count"]
+layout_mode = 2
+texture = ExtResource("2_1kom4")
+expand_mode = 2

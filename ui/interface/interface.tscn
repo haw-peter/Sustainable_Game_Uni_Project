@@ -1,11 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://bmxafsj7i4ru2"]
+[gd_scene load_steps=9 format=3 uid="uid://bmxafsj7i4ru2"]
 
 [ext_resource type="Script" path="res://ui/interface/interface.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://bdgu0cicu0erv" path="res://ui/interface/bar/LifeBar.tscn" id="2"]
-[ext_resource type="PackedScene" uid="uid://dscw4mglk6dx6" path="res://ui/interface/counter/Counter.tscn" id="3"]
+[ext_resource type="Texture2D" uid="uid://dwcsdbxy7i5jr" path="res://ui/interface/bar/happy.png" id="2_nokyb"]
 [ext_resource type="PackedScene" uid="uid://baubngqf1bca5" path="res://ui/interface/bar/WasteBar.tscn" id="3_7wna4"]
+[ext_resource type="Texture2D" uid="uid://cj7rncm1era2i" path="res://ui/interface/bar/meh.png" id="3_wgwa0"]
+[ext_resource type="Texture2D" uid="uid://bkpygxnsrcqub" path="res://ui/interface/bar/sad.png" id="4_43j5l"]
 [ext_resource type="PackedScene" uid="uid://cl7gsipfesj1p" path="res://ui/interface/counter/GoldCounter.tscn" id="5_v6bx1"]
-[ext_resource type="PackedScene" uid="uid://bd75qmavfnqn0" path="res://ui/interface/counter/house.tscn" id="6_jq5eq"]
 [ext_resource type="PackedScene" uid="uid://mh6iya4fk1o2" path="res://ui/interface/counter/citizen.tscn" id="7_vqy75"]
 
 [node name="Interface" type="Control"]
@@ -18,11 +19,14 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1")
+happy_pic = ExtResource("2_nokyb")
+meh_pic = ExtResource("3_wgwa0")
+sad_pic = ExtResource("4_43j5l")
 
 [node name="Bars" type="VBoxContainer" parent="."]
 layout_mode = 1
-offset_right = 484.0
-offset_bottom = 137.0
+offset_right = 315.0
+offset_bottom = 84.0
 size_flags_horizontal = 3
 
 [node name="LifeBar" parent="Bars" instance=ExtResource("2")]
@@ -34,16 +38,13 @@ layout_mode = 2
 script = null
 
 [node name="Counters" type="HBoxContainer" parent="."]
+layout_direction = 2
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.002
-anchor_top = 0.002
-anchor_right = 1.002
-anchor_bottom = 0.002
-offset_left = -356.304
-offset_top = -0.296
-offset_right = -0.304077
-offset_bottom = 155.704
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -164.0
+offset_bottom = 45.0
 grow_horizontal = 0
 size_flags_vertical = 4
 
@@ -53,35 +54,36 @@ layout_mode = 2
 [node name="GoldCounter" parent="Counters" instance=ExtResource("5_v6bx1")]
 layout_mode = 2
 
-[node name="HouseCounter" parent="Counters" instance=ExtResource("6_jq5eq")]
-layout_mode = 2
-
-[node name="WoodCounter" parent="Counters" instance=ExtResource("3")]
-visible = false
-layout_mode = 2
-
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.498
 anchor_right = 0.498
 offset_left = -29.696
-offset_right = 34.304
-offset_bottom = 28.0
+offset_right = 36.304
+offset_bottom = 31.0
 
 [node name="Hours" type="Label" parent="Panel"]
-layout_mode = 0
-offset_right = 33.0
-offset_bottom = 28.0
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_right = 34.0
+grow_vertical = 2
 text = " 12 :"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Minutes" type="Label" parent="Panel"]
-layout_mode = 0
-offset_left = 33.0
-offset_right = 64.0
-offset_bottom = 28.0
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -27.0
+offset_right = -8.0
+grow_horizontal = 0
+grow_vertical = 2
 text = "00"
 horizontal_alignment = 1
 vertical_alignment = 1
