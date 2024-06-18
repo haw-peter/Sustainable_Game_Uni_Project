@@ -28,7 +28,7 @@ func start_game(stats: PlayerStats):
 	
 	# game end condition
 func _check_waste_level(): 
-	if new_stats.waste >= 12: 
+	if new_stats.waste >= 100: 
 		end_game()
 		script_instance.export_log_to_csv("user://logs/godot.log", "res://logs/logs.csv")
 			
