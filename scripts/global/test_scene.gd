@@ -17,6 +17,7 @@ func _ready():
 	
 	start_game(new_stats)
 	new_stats.resources_changed.connect(_check_waste_level)
+	new_stats.resources_changed.connect(_notification)
 	
 func start_game(stats: PlayerStats):
 	player_handler.start_game(stats)
@@ -27,7 +28,7 @@ func start_game(stats: PlayerStats):
 	
 	# game end condition
 func _check_waste_level(): 
-	if new_stats.waste >= 100: 
+	if new_stats.waste >= 12: 
 		end_game()
 		script_instance.export_log_to_csv("user://logs/godot.log", "res://logs/logs.csv")
 			
@@ -37,7 +38,10 @@ func end_game():
 			get_tree().change_scene_to_file("res://scenes/end_menu.tscn")
 			print("Game Over! Waste level exceeded 100.")	
 			
-			
+func _notification(what):
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		script_instance.export_log_to_csv("user://logs/godot.log", "res://logs/logs.csv")
+		get_tree().quit()			
 # Function to generate a unique ID based on the player's IP address
 func generate_unique_id(): #new
 	var ip_address = ""
