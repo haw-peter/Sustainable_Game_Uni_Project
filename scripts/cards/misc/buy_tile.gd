@@ -1,4 +1,4 @@
 extends Card
 
-func apply_effects(player_stats: PlayerStats):
+func apply_effects(_player_stats: PlayerStats):
 	pass
