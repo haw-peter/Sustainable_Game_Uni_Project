@@ -1,5 +1,7 @@
 extends Control
 
+var houseCounterReached10 = false
+
 signal health_updated(value)
 signal gold_updated(count)
 signal house_updated(count)
@@ -30,7 +32,11 @@ func _update_house_label(house_count):
 	print("Building: ", house_count)  
 	$Counters/HouseCounter/Number.text = str(house_count)
 	$Counters/HouseCounter/Number/AnimationPlayer.play("shake")
-
+	
+	if (house_count == 10 && !houseCounterReached10):
+		DialogManager.start_notification("Great! You already placed 10 buildings!")
+		houseCounterReached10 = true
+		
 func _update_citizen_label(_citizen_count):
 	print("Population: ", _citizen_count)  
 	$Counters/CitizenCounter/Number.text = str(_citizen_count)
@@ -47,5 +53,3 @@ func _update_waste_bar(_waste_count):
 	$Bars/WasteBar/Count/Number.text = str(_waste_count)
 	$Bars/WasteBar/TextureProgress.value = _waste_count
 	$Bars/WasteBar/TextureProgress/AnimationPlayer.play("shake")
-
-	

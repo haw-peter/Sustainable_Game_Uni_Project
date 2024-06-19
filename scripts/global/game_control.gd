@@ -40,7 +40,10 @@ func update_interface():
 
 # waste multiplier is influenced by the type of building you place
 func calc_waste_incease() -> float:
+	
 	var waste_increase = (player_stats.citizens * player_stats.waste_multiplier)
+	if(waste_increase > 5):
+		DialogManager.start_notification("Watch out! You produce too much waste!")
 	return waste_increase
 
 func calc_happiness_incease():

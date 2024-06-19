@@ -41,6 +41,7 @@ autoplay = true
 script = ExtResource("7_wvqdj")
 
 [node name="TestScene" parent="." instance=ExtResource("8_j58jo")]
+visible = false
 position = Vector2(-1, 0)
 
 [node name="Timer" type="Timer" parent="."]
