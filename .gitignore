@@ -1,2 +1,19 @@
 # Godot 4+ specific ignores
 .godot/
+logs/logs.Action.translation
+logs/logs.Building.translation
+logs/logs.Buy Tile.translation
+logs/logs.csv
+logs/logs.csv.import
+logs/logs.Draw 2.translation
+logs/logs.Eco.translation
+logs/logs.Factory.translation
+logs/logs.Gold.translation
+logs/logs.Happiness.translation
+logs/logs.House.translation
+logs/logs.isCardDiscarded.translation
+logs/logs.isCardDrawn.translation
+logs/logs.Pollution.translation
+logs/logs.Population.translation
+logs/logs.Recycling Station.translation
+logs/logs.Timestamp.translation

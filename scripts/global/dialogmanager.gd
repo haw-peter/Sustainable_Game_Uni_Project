@@ -15,6 +15,8 @@ var text_box_position: Vector2
 var is_dialog_active = false
 var can_advance_line = false
 
+var is_notification_active = false
+
 func _ready():
 	if NotificationManager.notification_parent != null :
 		_show_notification_box()
@@ -22,6 +24,9 @@ func _ready():
 		NotificationManager.connect("notification_parent_set", Callable(self, "_show_notification_box")) 
 
 func start_notification(line: String):
+	if(is_notification_active):
+		_close_current_notification()
+	
 	notification_line = line
 
 	_show_notification_box()
@@ -40,6 +45,7 @@ func start_dialog(position: Vector2, lines: Array[String]):
 
 func _show_notification_box():
 	if NotificationManager.notification_parent != null && notification_line != "":
+		is_notification_active = true
 		notification_box = text_box_scene.instantiate()
 		notification_box.finished_displaying.connect(_on_notification_box_finished_displaying)
 		NotificationManager.notification_parent.add_child(notification_box)
@@ -79,4 +85,8 @@ func _unhaldled_input(event):
 
 func _on_timer_timeout():
 	$Timer.stop()
+	_close_current_notification()
+	is_notification_active = false
+	
+func _close_current_notification():
 	notification_box.queue_free()
