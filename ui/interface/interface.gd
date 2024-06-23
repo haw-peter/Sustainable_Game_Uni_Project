@@ -7,7 +7,6 @@ signal citizen_updated(count)
 signal health_bar_changed(value)
 signal waste_bar_changed(value)
 
-
 @export var happy_pic : Texture
 @export var meh_pic : Texture
 @export var sad_pic : Texture
@@ -38,7 +37,7 @@ func _update_citizen_label(_citizen_count):
 
 func _update_health_bar(_health_count):
 	print("Happiness: ", _health_count)  
-	$Bars/LifeBar/Count/Number.text = str(_health_count)
+	$Bars/LifeBar/Count/Number.text = "%.2f" % _health_count
 	$Bars/LifeBar/TextureProgress.value = _health_count
 	# update the Picture
 	if _health_count >= 75:
@@ -51,5 +50,5 @@ func _update_health_bar(_health_count):
 
 func _update_waste_bar(_waste_count):
 	print("Pollution: ", _waste_count) 
-	$Bars/WasteBar/Count/Number.text = str(_waste_count)
+	$Bars/WasteBar/Count/Number.text = "%.2f" % _waste_count
 	$Bars/WasteBar/TextureProgress.value = _waste_count

@@ -4,8 +4,13 @@ extends Node
 # in game Timer x = hours y = minutes
 var time : Vector2i = Vector2i(12, 0)
 var player_stats : PlayerStats
-
+var factor = 2
 const startMessage: String = "Hello Player! Welcome to our city! We love it here and want to see the city grow and prosper. Maybe you can help us?"
+
+@export var tax_factor : float = 10 #
+@export var too_rich = 250 # define when player is too rich 
+@export var waste_fac_res = 0.1
+@export var waste_fac_fac = 0.7
 
 func _ready():
 	DialogManager.start_notification(startMessage)
@@ -19,9 +24,7 @@ func _on_timer_timeout():
 	$Camera2D/Interface/Panel/Minutes.text = "%02d" % time.y
 	
 	if (time.y % 10) == 0:
-		player_stats.change_capital(player_stats.capital_gain)
-		player_stats.change_waste(calc_waste_incease())
-		player_stats.change_happiness(calc_happiness_incease())
+		calc_all()
 
 func in_hand(card: Card):
 	var in_hand = $TestScene/TurnUI/Hand.get_child_count()
@@ -38,18 +41,50 @@ func update_interface():
 
 # waste multiplier is influenced by the type of building you place
 func calc_waste_incease() -> float:
-	var waste_increase = player_stats.waste_multiplier
-	# calculates it i think
-	var buildings_to_citizens_ratio = ((float(player_stats.citizens) / 5) / float(player_stats.houses))
-	# if 60% is non redidentual, i think °_°, additional waste
-	if buildings_to_citizens_ratio < 0.6:
-		waste_increase +=  buildings_to_citizens_ratio * 0.02
-	return round_place(waste_increase, 2)
+	var increase = 0
+	var cleanupfee = 2 * player_stats.res_buildings
+	var cleanup = cleanupfee * waste_fac_res
+	
+	# calc res portion
+	increase += (waste_fac_res * player_stats.res_buildings) - cleanup
+	# calc fac portion
+	if ((player_stats.citizens/tax_factor) - cleanupfee) > 1:
+		increase += (waste_fac_fac*player_stats.fac_buildings) * 0.9
+	else:
+		increase += (waste_fac_fac*player_stats.fac_buildings)
+	
+	return increase * factor
 
 func calc_happiness_incease() -> float:
-	# relation between happiness and waste happiness 
-	var happiness_increase = player_stats.happiness_multiplier - (0.5*((pow(8, (player_stats.waste - 60)/40)) - pow(0.92, (player_stats.waste - 30))))
-	return happiness_increase
+	var increase = 0
+	# Happiness depending on pollution
+	if player_stats.waste >= 30:
+		increase -= 3
+	elif player_stats.waste >= 60:
+		increase -= 8
+	
+	# Happiness depending on res/fac ratio
+	if player_stats.houses > 1: #atleast 1 building
+		var ratio = abs((12 * player_stats.fac_buildings) - (1 * player_stats.res_buildings)) # compate the ratio, the closer to 0 the better
+		increase += clampf(5 - (0.8 * ratio), 0 , 5) # ideal ratio = full 5 % else make less, clamp val 0 - 5
+	
+	# when player is too rich, decrease happiness
+	if player_stats.capital > too_rich:
+		increase -= 1.5
+	
+	increase += player_stats.happiness_multiplier # Gains for Decoration
+	
+	return increase
+
+func calc_gold_increase() -> int:
+	# Calculates income based on Citizen Tax and Factory gain 
+	var income = ceil(player_stats.citizens/tax_factor) + player_stats.capital_gain
+	return income
+
+func calc_all():
+	player_stats.change_capital(calc_gold_increase())
+	player_stats.change_waste(calc_waste_incease())
+	player_stats.change_happiness(calc_happiness_incease())
 
 func _on_test_scene_ready():
 	player_stats = $TestScene.new_stats
