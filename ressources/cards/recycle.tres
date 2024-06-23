@@ -12,5 +12,5 @@ pic = ExtResource("1_jqgjg")
 description = "Decreases Waste"
 color = Color(1, 1, 1, 1)
 layer = 1
-cost = 40
-inhabitants = 0
+cost = 100
+capital_gain = 0

@@ -1,25 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://cl7gsipfesj1p"]
+[gd_scene load_steps=2 format=3 uid="uid://cl7gsipfesj1p"]
 
-[ext_resource type="PackedScene" uid="uid://dscw4mglk6dx6" path="res://ui/interface/counter/Counter.tscn" id="1_46s86"]
 [ext_resource type="Texture2D" uid="uid://c3cm1qnoch75i" path="res://ui/interface/counter/goldbar.png" id="2_2d3fu"]
 
-[node name="GoldCounter" instance=ExtResource("1_46s86")]
+[node name="GoldCounter" type="HBoxContainer"]
 
-[node name="Number" parent="." index="0"]
-anchors_preset = 0
-anchor_top = 0.0
-anchor_bottom = 0.0
-offset_left = -13.0
-offset_top = 163.0
-offset_right = 12.0
-offset_bottom = 244.0
-grow_vertical = 1
-text = "100"
+[node name="Number" type="Label" parent="."]
+layout_mode = 2
 
-[node name="Icon" parent="." index="1"]
-offset_left = 20.0
-offset_top = 73.0
-offset_right = 100.0
-offset_bottom = 153.0
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 2
 texture = ExtResource("2_2d3fu")
+expand_mode = 3
+stretch_mode = 4
 flip_h = true
