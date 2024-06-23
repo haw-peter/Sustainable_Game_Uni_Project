@@ -26,11 +26,8 @@ func _ready():
 func start_notification(line: String):
 	if(is_notification_active):
 		_close_current_notification()
-	
 	notification_line = line
-
 	_show_notification_box()
-	
 	is_dialog_active = true
 
 func start_dialog(position: Vector2, lines: Array[String]):
