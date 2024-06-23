@@ -1,9 +1,4 @@
 extends Control
-
-
-func _on_options_pressed():
-	$Buttons_sfx.play()
-	get_tree().change_scene_to_file("res://scenes/menu/options_menu.tscn")
 	
 func _on_exit_pressed():
 	$Buttons_sfx.play()

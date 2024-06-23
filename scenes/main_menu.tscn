@@ -75,12 +75,6 @@ alignment = 1
 layout_mode = 2
 text = "Start Game"
 
-[node name="Options" type="Button" parent="View/HBoxContainer/menu_box"]
-layout_mode = 2
-text = "Options
-"
-icon_alignment = 1
-
 [node name="Exit" type="Button" parent="View/HBoxContainer/menu_box"]
 layout_mode = 2
 text = "Exit Game"
@@ -89,5 +83,4 @@ text = "Exit Game"
 stream = ExtResource("3_bjofs")
 
 [connection signal="pressed" from="View/HBoxContainer/menu_box/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="View/HBoxContainer/menu_box/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="View/HBoxContainer/menu_box/Exit" to="." method="_on_exit_pressed"]
