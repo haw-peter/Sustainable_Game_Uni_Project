@@ -39,7 +39,7 @@ alignment = 1
 text_overrun_behavior = 1
 clip_text = true
 item_count = 3
-selected = 0
+selected = 1
 popup/item_0/text = "Pause"
 popup/item_0/id = 0
 popup/item_1/text = "Play"
@@ -63,6 +63,7 @@ script = ExtResource("7_wvqdj")
 [node name="TestScene" parent="." instance=ExtResource("8_j58jo")]
 visible = false
 position = Vector2(-1, 0)
+discard_cost = 50
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true

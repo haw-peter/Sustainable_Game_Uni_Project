@@ -33,11 +33,11 @@ func set_capital(value: int):
 	resources_changed.emit()
 
 func set_waste(value: float):
-	waste = clamp(value, 0 , max_waste)
+	waste = clampf(value, 0 , max_waste)
 	resources_changed.emit()
 
-func set_happiness(value: int):
-	happiness = clampi(value, 0 , 100)
+func set_happiness(value: float):
+	happiness = clampf(value, 0 , 100)
 	resources_changed.emit()
 
 func set_citizens(value: int):
@@ -74,6 +74,10 @@ func change_happiness(amount: float):
 	self.happiness += amount
 func change_citizens(amount: int):
 	self.citizens += amount
+func change_happiness_multiplier(amount: int):
+	self.happiness_multiplier += amount
+func change_waste_multiplier(amount: int):
+	self.waste_multiplier += amount
 func change_capital_gain(amount: int):
 	self.capital_gain += amount
 func change_res_buildings(amount: int):

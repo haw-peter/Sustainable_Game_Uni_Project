@@ -13,6 +13,7 @@ description = "Place 1 House"
 color = Color(9.62615e-07, 0.438985, 0.269224, 1)
 layer = 1
 cost = 10
+inhabitants = 10
 capital_gain = 0
 waste_gain = 0.0
 happiness_gain = 0.0

@@ -1,7 +1,7 @@
 extends Timer
 
 func _ready():
-	_on_option_button_item_selected(0) # set intital state
+	_on_option_button_item_selected(1) # set intital state
 
 func _on_option_button_item_selected(index):
 	match index:
@@ -11,5 +11,5 @@ func _on_option_button_item_selected(index):
 			set_wait_time(1)
 			set_paused(false)
 		2:
-			set_wait_time(0.2)
+			set_wait_time(0.4)
 			set_paused(false)

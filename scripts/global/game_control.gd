@@ -7,7 +7,7 @@ var player_stats : PlayerStats
 
 const startMessage: String = "Hello Player! Welcome to our city! We love it here and want to see the city grow and prosper. Maybe you can help us?"
 
-@export var tax_factor = 10 #
+@export var tax_factor : float = 10 #
 @export var too_rich = 250 # define when player is too rich 
 @export var waste_fac_res = 0.1
 @export var waste_fac_fac = 0.7
@@ -58,38 +58,30 @@ func calc_waste_incease() -> float:
 func calc_happiness_incease() -> float:
 	var increase = 0
 	# Happiness depending on pollution
-	if player_stats.waste >= 20:
-		increase -= 0.5
+	if player_stats.waste >= 30:
+		increase -= 3
 	elif player_stats.waste >= 60:
-		increase -= 1
+		increase -= 8
 	
 	# Happiness depending on res/fac ratio
 	if player_stats.houses > 1: #atleast 1 building
 		var ratio = abs((12 * player_stats.fac_buildings) - (1 * player_stats.res_buildings)) # compate the ratio, the closer to 0 the better
-		increase += clampf(5 - (0.3*ratio), 0 , 5) # ideal ratio = full 5 % else make less, clamp val 0 - 5
+		increase += clampf(5 - (0.8 * ratio), 0 , 5) # ideal ratio = full 5 % else make less, clamp val 0 - 5
 	
 	# when player is too rich, decrease happiness
 	if player_stats.capital > too_rich:
-		increase -= 1
+		increase -= 1.5
+	
+	increase += player_stats.happiness_multiplier # Gains for Decoration
 	
 	return increase
 
 func calc_gold_increase() -> int:
 	# Calculates income based on Citizen Tax and Factory gain 
-	var income = (player_stats.citizens/tax_factor) + player_stats.capital_gain
+	var income = ceil(player_stats.citizens/tax_factor) + player_stats.capital_gain
 	return income
 
-func calc_citizens():
-	# Depending on the overall Happiness, the inhabitans per res Building change
-	if player_stats.happiness < 25:
-		player_stats.citizens = 5 * player_stats.res_buildings
-	elif player_stats.happiness < 50:
-		player_stats.citizens = 7 * player_stats.res_buildings
-	else:
-		player_stats.citizens = 10 * player_stats.res_buildings
-
 func calc_all():
-	calc_citizens()
 	player_stats.change_capital(calc_gold_increase())
 	player_stats.change_waste(calc_waste_incease())
 	player_stats.change_happiness(calc_happiness_incease())

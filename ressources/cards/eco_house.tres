@@ -13,6 +13,7 @@ description = "Place 1 Eco - House"
 color = Color(3.17663e-06, 0.769305, 0.253667, 1)
 layer = 1
 cost = 20
+inhabitants = 6
 capital_gain = 0
 waste_gain = 0.0
 happiness_gain = 0.0

@@ -13,6 +13,7 @@ enum Type {BUILDING, RESOURCES, ENVIROMENT, DECKS}  #type of cards
 @export var layer: int = 1
 
 @export var cost : int
+@export var inhabitants : int
 # values for gaining every timeframe
 @export var capital_gain : int
 @export var waste_gain : float
@@ -27,6 +28,17 @@ func card_type() -> String:
 
 func play(player_stats: PlayerStats):
 	player_stats.capital -= self.cost
+	
+	# Adjust citizens gain depending on the current happiness
+	# Depending on the overall Happiness, the inhabitans per res Building change
+	if self.inhabitants > 0: # only when actually adding ppl
+		if player_stats.happiness < 25:
+			player_stats.citizens += self.inhabitants - 5
+		elif player_stats.happiness < 50:
+			player_stats.citizens += self.inhabitants - 3
+		else:
+			player_stats.citizens += self.inhabitants
+	
 	player_stats.capital_gain += self.capital_gain
 	player_stats.waste_multiplier += self.waste_gain
 	player_stats.happiness_multiplier += self.happiness_gain
