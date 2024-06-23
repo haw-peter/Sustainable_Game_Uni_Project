@@ -4,7 +4,7 @@ extends Node
 # in game Timer x = hours y = minutes
 var time : Vector2i = Vector2i(12, 0)
 var player_stats : PlayerStats
-
+var factor = 2
 const startMessage: String = "Hello Player! Welcome to our city! We love it here and want to see the city grow and prosper. Maybe you can help us?"
 
 @export var tax_factor : float = 10 #
@@ -53,7 +53,7 @@ func calc_waste_incease() -> float:
 	else:
 		increase += (waste_fac_fac*player_stats.fac_buildings)
 	
-	return increase
+	return increase * factor
 
 func calc_happiness_incease() -> float:
 	var increase = 0

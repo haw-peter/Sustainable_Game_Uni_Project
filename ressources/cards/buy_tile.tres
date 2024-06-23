@@ -13,4 +13,7 @@ description = "Buy 1 Land Tile"
 color = Color(0.803922, 0.67451, 0, 1)
 layer = 0
 cost = 100
+inhabitants = 0
 capital_gain = 0
+waste_gain = 0.0
+happiness_gain = 0.0
