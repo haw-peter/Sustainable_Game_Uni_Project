@@ -22,7 +22,10 @@ var houses : int : set = set_houses
 var waste_multiplier : float : set = set_waste_multiplier
 var happiness_multiplier : float : set = set_happiness_multiplier
 
-var capital_gain : float : set = set_capital_gain # passive capital gain
+var capital_gain : float : set = set_capital_gain # passive capital gain for buildings such as factories
+
+var res_buildings : int : set = set_res_buildings
+var fac_buildings : int : set = set_fac_buildings
 
 # setter for the resources
 func set_capital(value: int):
@@ -54,35 +57,26 @@ func set_happiness_multiplier(value: float):
 func set_capital_gain(value: float):
 	capital_gain = value
 
+func set_res_buildings(value: int):
+	res_buildings = value
+
+func set_fac_buildings(value: int):
+	fac_buildings = value
+
 # function to change capital, when negative lose capital
 func change_capital(amount: int):
 	self.capital += amount
-	
 func change_houses(amount: int): #new
 	self.houses += amount
-
 func change_waste(amount: float):
 	self.waste += amount
-
 func change_happiness(amount: float):
 	self.happiness += amount
-
 func change_citizens(amount: int):
 	self.citizens += amount
-
 func change_capital_gain(amount: int):
 	self.capital_gain += amount
-
-func create_instance() -> Resource:
-	var instance: PlayerStats = self.duplicate()
-	instance.capital = 500
-	instance.waste = 0
-	instance.houses = 0
-	instance.happiness = 50
-	instance.citizens = 0
-	instance.waste_multiplier = 1.0
-	instance.happiness_multiplier = 1.0
-	instance.deck = instance.starting_deck.duplicate()
-	instance.draw_pile = CardPile.new()
-	instance.discard_pile = CardPile.new()
-	return instance
+func change_res_buildings(amount: int):
+	res_buildings += amount
+func change_fac_buildings(amount: int):
+	fac_buildings += amount
