@@ -4,7 +4,10 @@ extends Node
 # in game Timer x = hours y = minutes
 var time : Vector2i = Vector2i(12, 0)
 var player_stats : PlayerStats
-var factor = 2
+var factor = 2 
+var too_much_waste_message_printed = false
+var too_rich_message_printed = false
+var house_message_printed = false
 const startMessage: String = "Hello Player! Welcome to our city! We love it here and want to see the city grow and prosper. Maybe you can help us?"
 
 @export var tax_factor : float = 10 #
@@ -47,6 +50,8 @@ func calc_waste_incease() -> float:
 	
 	# calc res portion
 	increase += (waste_fac_res * player_stats.res_buildings) - cleanup
+	if(increase < 0):
+		increase = 0;
 	# calc fac portion
 	if ((player_stats.citizens/tax_factor) - cleanupfee) > 1:
 		increase += (waste_fac_fac*player_stats.fac_buildings) * 0.9
@@ -61,16 +66,26 @@ func calc_happiness_incease() -> float:
 	if player_stats.waste >= 30:
 		increase -= 3
 	elif player_stats.waste >= 60:
+		if (!too_much_waste_message_printed):
+			DialogManager.start_notification("Your waste is getting out of hand. Your citizens aren't happy about it!")
+			too_much_waste_message_printed = true;
 		increase -= 8
+
+	if (player_stats.houses > 5 && !house_message_printed):
+			DialogManager.start_notification("Congratilations! You've finished your first 5 buildings!")
+			house_message_printed = true;
 	
 	# Happiness depending on res/fac ratio
 	if player_stats.houses > 1: #atleast 1 building
-		var ratio = abs((12 * player_stats.fac_buildings) - (1 * player_stats.res_buildings)) # compate the ratio, the closer to 0 the better
+		var ratio = abs((6 * player_stats.fac_buildings) - (1 * player_stats.res_buildings)) # compate the ratio, the closer to 0 the better
 		increase += clampf(5 - (0.8 * ratio), 0 , 5) # ideal ratio = full 5 % else make less, clamp val 0 - 5
 	
 	# when player is too rich, decrease happiness
 	if player_stats.capital > too_rich:
-		increase -= 1.5
+		if(!too_rich_message_printed):
+			DialogManager.start_notification("You're too rich. Your citizens aren't happy about it!")
+			too_rich_message_printed = true;
+			increase -= 1.5
 	
 	increase += player_stats.happiness_multiplier # Gains for Decoration
 	
@@ -80,6 +95,7 @@ func calc_gold_increase() -> int:
 	# Calculates income based on Citizen Tax and Factory gain 
 	var income = ceil(player_stats.citizens/tax_factor) + player_stats.capital_gain
 	return income
+	
 
 func calc_all():
 	player_stats.change_capital(calc_gold_increase())
