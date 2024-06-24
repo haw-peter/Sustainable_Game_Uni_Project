@@ -24,6 +24,7 @@ Events="*res://scripts/global/events.gd"
 [debug]
 
 file_logging/enable_file_logging=true
+file_logging/max_log_files=99
 
 [display]
 
