@@ -19,7 +19,6 @@ func _ready():
 	interface_node.connect("citizen_updated", Callable(self, "_update_citizen_label"))
 	interface_node.connect("health_bar_changed", Callable(self, "_update_health_bar"))
 	interface_node.connect("waste_bar_changed", Callable(self, "_update_waste_bar"))
-	
 
 func _update_gold_label(_gold_count):
 	print("Timestamp: ","%02d:" % get_parent().get_parent().time.x , "%02d" % get_parent().get_parent().time.y)

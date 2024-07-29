@@ -61,7 +61,7 @@ func _set_playable() -> void:
 		picture.modulate = Color(1, 1 , 1 , 0.5)
 	
 	# special condition for draw 2 card
-	if card.id == "Draw 2" && player_stats.draw_pile.cards.size() < 2:
+	if card.id == "Draw 2" && player_stats.draw_pile.cards.size() < 2 && player_stats.discard_pile.cards.size() < 1:
 		playable = false
 		cost.modulate = Color(1, 0, 0, 1)
 		picture.modulate = Color(1, 1 , 1 , 0.5)
